@@ -1,8 +1,28 @@
-import { defineConfig } from 'vite'
+import { defineConfig, type Plugin } from 'vite'
 import { resolve } from 'path'
+import { renderHeader, renderFooter, CHROME_SCRIPT, activeFromFilename } from './partials.mjs'
+
+// Inject shared chrome (header / footer / interactivity) into every HTML entry,
+// in dev and build alike. Edit markup in partials.mjs.
+function chrome(): Plugin {
+  return {
+    name: 'brw-chrome',
+    transformIndexHtml: {
+      order: 'pre',
+      handler(html, ctx) {
+        const active = activeFromFilename(ctx.filename)
+        return html
+          .replace('<!--#HEADER-->', renderHeader(active))
+          .replace('<!--#FOOTER-->', renderFooter())
+          .replace('</body>', `${CHROME_SCRIPT}\n</body>`)
+      },
+    },
+  }
+}
 
 export default defineConfig({
   base: './',
+  plugins: [chrome()],
   build: {
     rollupOptions: {
       input: {
@@ -20,7 +40,7 @@ export default defineConfig({
         charities: resolve(__dirname, 'charities.html'),
         blog: resolve(__dirname, 'blog.html'),
         quote: resolve(__dirname, 'quote.html'),
-      }
-    }
-  }
+      },
+    },
+  },
 })
