@@ -232,6 +232,41 @@ export const CHROME_SCRIPT = `<script>
         c.style.display = (!f||f==='all'||t===f)?'':'none'; });
     }); });
   }
+
+  // Drag-to-scroll on any rail track (works on touch natively too)
+  document.querySelectorAll('[data-rail-track]').forEach(function(t){
+    var down=false, sx=0, sl=0, moved=false;
+    t.addEventListener('pointerdown', function(e){ down=true; moved=false; sx=e.clientX; sl=t.scrollLeft; t.classList.add('dragging'); });
+    window.addEventListener('pointerup', function(){ down=false; t.classList.remove('dragging'); });
+    t.addEventListener('pointermove', function(e){ if(!down) return; var dx=e.clientX-sx; if(Math.abs(dx)>4) moved=true; t.scrollLeft=sl-dx; });
+    t.addEventListener('click', function(e){ if(moved){ e.preventDefault(); } }, true);
+  });
+
+  // Pointer-driven flourishes (desktop, motion-OK only)
+  var fine = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+  var still = window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  if (fine && !still) {
+    // Magnetic elements
+    document.querySelectorAll('.magnetic').forEach(function(el){
+      el.addEventListener('pointermove', function(e){
+        var r=el.getBoundingClientRect();
+        var x=(e.clientX-(r.left+r.width/2))*0.3, y=(e.clientY-(r.top+r.height/2))*0.3;
+        el.style.transform='translate('+x+'px,'+y+'px)';
+      });
+      el.addEventListener('pointerleave', function(){ el.style.transform=''; });
+    });
+    // Hero parallax (tilt frame, drift badge)
+    var hero=document.querySelector('.hero'), frame=document.querySelector('.hero-frame'), badge=document.querySelector('.hero-badge');
+    if(hero && frame){
+      hero.addEventListener('pointermove', function(e){
+        var r=hero.getBoundingClientRect();
+        var px=(e.clientX-r.left)/r.width-0.5, py=(e.clientY-r.top)/r.height-0.5;
+        frame.style.transform='perspective(1000px) rotateY('+(px*5)+'deg) rotateX('+(-py*5)+'deg)';
+        if(badge) badge.style.transform='translate('+(px*18)+'px,'+(py*18)+'px)';
+      });
+      hero.addEventListener('pointerleave', function(){ frame.style.transform=''; if(badge) badge.style.transform=''; });
+    }
+  }
 })();
 </script>`
 
