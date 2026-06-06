@@ -81,7 +81,7 @@ h1, h2, h3 {
   letter-spacing: 0.005em;
   text-transform: uppercase;
 }
-h1 { font-size: clamp(3rem, 8.5vw, 7rem); }
+h1 { font-size: clamp(2.6rem, 6.4vw, 5.5rem); }
 h2 { font-size: clamp(2.2rem, 5.5vw, 4.2rem); }
 h3 { font-size: clamp(1.6rem, 3vw, 2.4rem); }
 h4 { font-family: var(--sans); font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em; line-height: 1.2; }
@@ -99,8 +99,8 @@ p { max-width: 64ch; }
 
 /* ---------- Layout ---------- */
 .container { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: clamp(1.1rem, 5vw, 2.6rem); }
-.section { padding-block: clamp(4.5rem, 9vw, 8rem); position: relative; }
-.section--tight { padding-block: clamp(3rem, 5vw, 4.5rem); }
+.section { padding-block: clamp(3.25rem, 5.5vw, 5.5rem); position: relative; }
+.section--tight { padding-block: clamp(2.5rem, 4vw, 3.75rem); }
 .section-head { max-width: 760px; margin-bottom: clamp(2.5rem, 5vw, 4rem); }
 .section-head.center { margin-inline: auto; text-align: center; }
 .section-head .eyebrow { margin-bottom: 1.2rem; }
@@ -252,7 +252,7 @@ p { max-width: 64ch; }
 .hero-inner {
   position: relative; z-index: 1;
   display: grid; grid-template-columns: 1.05fr 0.95fr; gap: clamp(2rem, 5vw, 4rem);
-  align-items: center; padding-block: clamp(3.5rem, 7vw, 6rem) clamp(3rem, 6vw, 5rem);
+  align-items: center; padding-block: clamp(2.5rem, 4.5vw, 4.25rem) clamp(2.5rem, 4.5vw, 3.75rem);
   min-height: calc(100svh - var(--nav-h));
 }
 .hero-copy { max-width: 640px; }
@@ -269,7 +269,7 @@ p { max-width: 64ch; }
 .hero-media { position: relative; }
 .hero-frame {
   position: relative; border-radius: var(--r-xl); overflow: hidden;
-  aspect-ratio: 4/5; border: 1px solid var(--line-2);
+  aspect-ratio: 4/3; max-height: 64vh; border: 1px solid var(--line-2);
   background: linear-gradient(160deg, var(--panel-2), var(--ink-2));
   box-shadow: var(--shadow);
 }
@@ -285,10 +285,27 @@ p { max-width: 64ch; }
 }
 .hero-badge .n { font-family: var(--display); font-size: 2.4rem; line-height: 0.9; color: var(--accent); }
 .hero-badge .t { font-size: 0.82rem; font-weight: 600; color: rgba(255,255,255,0.72); margin-top: 0.2rem; }
-@media (max-width: 900px) {
-  .hero-inner { grid-template-columns: 1fr; }
-  .hero-media { order: -1; max-width: 460px; }
-  .hero-frame { aspect-ratio: 16/11; }
+/* Tablet / narrow: stack, but lead with the headline and shrink the image */
+@media (max-width: 860px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+    min-height: 0;
+    gap: 2rem;
+    padding-block: clamp(2rem, 6vw, 3.25rem) clamp(2.5rem, 6vw, 4rem);
+  }
+  .hero-copy { order: 1; max-width: none; }
+  .hero-media { order: 2; width: 100%; max-width: 440px; margin-inline: auto; }
+  .hero-frame { aspect-ratio: 16/10; }
+}
+
+/* Phones: scale type/buttons so the two CTAs stay side by side */
+@media (max-width: 560px) {
+  .hero-sub { font-size: 1.05rem; margin-bottom: 1.8rem; }
+  .hero-actions { gap: 0.6rem; flex-wrap: nowrap; }
+  .hero-actions .btn { flex: 1 1 0; min-width: 0; white-space: nowrap; padding: 0.9rem 0.9rem; font-size: 0.95rem; }
+  .hero-frame { aspect-ratio: 4/3; }
+  .hero-badge { right: 0; padding: 0.8rem 1rem; }
+  .hero-badge .n { font-size: 2rem; }
 }
 
 /* ============================================================
@@ -305,7 +322,7 @@ p { max-width: 64ch; }
 /* ============================================================
    METRICS BAND
    ============================================================ */
-.metrics { background: var(--ink); }
+.metrics { background: var(--ink); padding-block: clamp(2rem, 3vw, 3rem); }
 .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); border: 1px solid var(--line); border-radius: var(--r-lg); overflow: hidden; }
 .metric { padding: clamp(1.6rem, 3vw, 2.6rem); border-right: 1px solid var(--line); position: relative; }
 .metric:last-child { border-right: none; }
