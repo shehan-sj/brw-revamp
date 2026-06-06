@@ -61,6 +61,10 @@ export function renderHeader(active = '') {
     <div class="masthead-actions">
       <a class="phone-pill" href="tel:18559727463">${PHONE_SVG}<span>1-855-972-7463</span></a>
       <a class="btn btn-accent btn-sm masthead-quote" href="./quote.html">Get a Quote</a>
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark mode">
+        <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      </button>
       <button class="menu-btn" id="menu-btn" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
         <span class="menu-btn-lines"><span></span><span></span></span>
         <span class="menu-btn-text">Menu</span>
@@ -156,6 +160,15 @@ export const CHROME_SCRIPT = `<script>
     if (fq) fq.classList.toggle('show', window.scrollY > 560);
   };
   window.addEventListener('scroll', onScroll, {passive:true}); onScroll();
+
+  // Theme toggle (light default; choice persisted in localStorage)
+  document.querySelectorAll('.theme-toggle').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('brw-theme', next); } catch(e){}
+    });
+  });
 
   // Slide-in drawer (used at all screen sizes)
   var drawer = document.getElementById('drawer');
@@ -269,6 +282,9 @@ export const CHROME_SCRIPT = `<script>
   }
 })();
 </script>`
+
+// Runs in <head> before first paint so the saved theme applies with no flash.
+export const THEME_INIT = `<script>(function(){try{var t=localStorage.getItem('brw-theme');document.documentElement.setAttribute('data-theme',t==='dark'?'dark':'light');}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>`
 
 export function activeFromFilename(filename) {
   const m = String(filename).replace(/\\/g, '/').split('/').pop() || ''

@@ -1,6 +1,6 @@
 import { defineConfig, type Plugin } from 'vite'
 import { resolve } from 'path'
-import { renderHeader, renderFooter, CHROME_SCRIPT, activeFromFilename } from './partials.mjs'
+import { renderHeader, renderFooter, CHROME_SCRIPT, THEME_INIT, activeFromFilename } from './partials.mjs'
 
 // Inject shared chrome (header / footer / interactivity) into every HTML entry,
 // in dev and build alike. Edit markup in partials.mjs.
@@ -12,6 +12,7 @@ function chrome(): Plugin {
       handler(html, ctx) {
         const active = activeFromFilename(ctx.filename)
         return html
+          .replace('<head>', `<head>\n  ${THEME_INIT}`)
           .replace('<!--#HEADER-->', renderHeader(active))
           .replace('<!--#FOOTER-->', renderFooter())
           .replace('</body>', `${CHROME_SCRIPT}\n</body>`)

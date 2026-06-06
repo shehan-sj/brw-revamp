@@ -284,7 +284,7 @@ p { max-width: 64ch; }
   padding: 1rem 1.3rem; box-shadow: var(--shadow); max-width: 220px;
 }
 .hero-badge .n { font-family: var(--display); font-size: 2.4rem; line-height: 0.9; color: var(--accent); }
-.hero-badge .t { font-size: 0.82rem; font-weight: 600; color: rgba(255,255,255,0.72); margin-top: 0.2rem; }
+.hero-badge .t { font-size: 0.82rem; font-weight: 600; color: var(--ink); opacity: 0.72; margin-top: 0.2rem; }
 /* Tablet / narrow: stack, but lead with the headline and shrink the image */
 @media (max-width: 860px) {
   .hero-inner {
@@ -692,3 +692,57 @@ p { max-width: 64ch; }
 .magnetic { will-change: transform; }
 /* animated underline for inline text links in prose */
 .svc-link, .blog-read-more, .btn-ghost { position: relative; }
+
+/* ============================================================
+   THEME TOGGLE + DARK MODE
+   ============================================================ */
+.theme-toggle {
+  display: inline-grid; place-items: center;
+  width: 40px; height: 40px; border-radius: 50%;
+  border: 1.5px solid var(--line-2); color: var(--paper);
+  transition: border-color var(--t), color var(--t), background var(--t);
+  flex-shrink: 0;
+}
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+.theme-toggle svg { width: 18px; height: 18px; }
+.theme-toggle .ic-moon { display: block; }
+.theme-toggle .ic-sun  { display: none; }
+html[data-theme="dark"] .theme-toggle .ic-moon { display: none; }
+html[data-theme="dark"] .theme-toggle .ic-sun  { display: block; }
+
+/* ---- Dark palette ---- */
+html[data-theme="dark"] {
+  --ink:      #0c0a09;
+  --ink-2:    #131110;
+  --panel:    #1a1614;
+  --panel-2:  #221d1a;
+  --panel-3:  #2c2622;
+  --line:     #2d2724;
+  --line-2:   #3f3833;
+
+  --paper:    #f6f3ef;
+  --muted:    #a8a09a;
+  --dim:      #7b7167;
+
+  --accent:   #e85e14;
+  --accent-2: #ff7d3a;
+  --accent-soft: rgba(232,94,20,0.16);
+  --accent-line: rgba(232,94,20,0.34);
+  --hazard:   #b9470a;
+
+  --shadow:    0 26px 70px -30px rgba(0,0,0,0.85);
+  --shadow-lg: 0 34px 90px -34px rgba(0,0,0,0.9);
+}
+
+/* ---- Dark: spots that use literal (non-token) colours ---- */
+html[data-theme="dark"] .masthead.is-stuck { background: rgba(12,10,9,0.82); }
+html[data-theme="dark"] .hero-grid {
+  background-image: linear-gradient(rgba(255,255,255,0.045) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.045) 1px, transparent 1px);
+}
+/* logo is black-on-transparent — needs a white plate on dark surfaces */
+html[data-theme="dark"] .brand-plate { background: #fff; border-radius: 10px; padding: 0.45rem 0.75rem; box-shadow: 0 6px 20px -10px rgba(0,0,0,0.6); }
+/* eco / sustainability block back to dark green */
+html[data-theme="dark"] .eco-wrap,
+html[data-theme="dark"] .sustainability-callout { background: linear-gradient(150deg, #12180f, #0d110c); border-color: #1f2c1b; }
+html[data-theme="dark"] .eco-badge { background: rgba(74,222,128,0.10); border-color: rgba(74,222,128,0.30); color: #6ee79a; }
+html[data-theme="dark"] .eco-stat-num { color: #6ee79a; }
