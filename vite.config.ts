@@ -1,47 +1,57 @@
 import { defineConfig, type Plugin } from 'vite'
 import { resolve } from 'path'
+import { readdirSync, readFileSync, existsSync } from 'fs'
 import { renderHeader, renderFooter, CHROME_SCRIPT, THEME_INIT, activeFromFilename } from './partials.mjs'
 
-// Inject shared chrome (header / footer / interactivity) into every HTML entry,
-// in dev and build alike. Edit markup in partials.mjs.
+const cardsFile = resolve(__dirname, 'generated/blog-cards.html')
+
+// Inject shared chrome (header / footer / interactivity) + generated blog cards.
 function chrome(): Plugin {
   return {
     name: 'brw-chrome',
+    configureServer(server) {
+      // serve the CMS at the bare /admin and /admin/ URLs in dev (MPA has no dir index)
+      server.middlewares.use((req, _res, next) => {
+        if (req.url === '/admin' || req.url === '/admin/') req.url = '/admin/index.html'
+        next()
+      })
+    },
     transformIndexHtml: {
       order: 'pre',
       handler(html, ctx) {
         const active = activeFromFilename(ctx.filename)
-        return html
+        let out = html
           .replace('<head>', `<head>\n  ${THEME_INIT}`)
           .replace('<!--#HEADER-->', renderHeader(active))
           .replace('<!--#FOOTER-->', renderFooter())
           .replace('</body>', `${CHROME_SCRIPT}\n</body>`)
+        if (out.includes('<!--BLOG_CARDS-->')) {
+          const cards = existsSync(cardsFile) ? readFileSync(cardsFile, 'utf8') : ''
+          out = out.replace('<!--BLOG_CARDS-->', cards)
+        }
+        return out
       },
     },
   }
 }
 
+// Static pages + any generated post-*.html (blog posts).
+const pages: Record<string, string> = {
+  index: 'index.html', 'ooh-advertising': 'ooh-advertising.html', 'transport-truck': 'transport-truck.html',
+  'fleet-graphics': 'fleet-graphics.html', 'custom-signs': 'custom-signs.html', about: 'about.html',
+  agencies: 'agencies.html', 'fleet-partner': 'fleet-partner.html', sustainability: 'sustainability.html',
+  portfolio: 'portfolio.html', testimonials: 'testimonials.html', charities: 'charities.html',
+  blog: 'blog.html', quote: 'quote.html',
+}
+const input: Record<string, string> = {}
+for (const [k, v] of Object.entries(pages)) input[k] = resolve(__dirname, v)
+for (const f of readdirSync(__dirname).filter(f => /^post-.+\.html$/.test(f))) {
+  input[f.replace(/\.html$/, '')] = resolve(__dirname, f)
+}
+
 export default defineConfig({
   base: './',
+  appType: 'mpa', // multi-page: no SPA fallback (so /admin/ serves the CMS, not the home page)
   plugins: [chrome()],
-  build: {
-    rollupOptions: {
-      input: {
-        index: resolve(__dirname, 'index.html'),
-        'ooh-advertising': resolve(__dirname, 'ooh-advertising.html'),
-        'transport-truck': resolve(__dirname, 'transport-truck.html'),
-        'fleet-graphics': resolve(__dirname, 'fleet-graphics.html'),
-        'custom-signs': resolve(__dirname, 'custom-signs.html'),
-        about: resolve(__dirname, 'about.html'),
-        agencies: resolve(__dirname, 'agencies.html'),
-        'fleet-partner': resolve(__dirname, 'fleet-partner.html'),
-        sustainability: resolve(__dirname, 'sustainability.html'),
-        portfolio: resolve(__dirname, 'portfolio.html'),
-        testimonials: resolve(__dirname, 'testimonials.html'),
-        charities: resolve(__dirname, 'charities.html'),
-        blog: resolve(__dirname, 'blog.html'),
-        quote: resolve(__dirname, 'quote.html'),
-      },
-    },
-  },
+  build: { rollupOptions: { input } },
 })
