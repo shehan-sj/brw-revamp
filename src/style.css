@@ -187,6 +187,18 @@ html[data-theme="dark"] .theme-toggle .ic-sun{display:block}
 .nav-burger.open span:nth-child(2){opacity:0}
 .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
+/* Transparent navbar over the dark cinematic hero → light chrome until it sticks */
+body.dark-hero .navbar:not(.stuck) .nav-link{color:rgba(255,255,255,.82)}
+body.dark-hero .navbar:not(.stuck) .nav-link:hover,body.dark-hero .navbar:not(.stuck) .nav-link.current{color:#fff}
+body.dark-hero .navbar:not(.stuck) .nav-phone{color:rgba(255,255,255,.85)}
+body.dark-hero .navbar:not(.stuck) .brand img{filter:brightness(0) invert(1)}
+body.dark-hero .navbar:not(.stuck) .theme-toggle{border-color:rgba(255,255,255,.4);color:#fff}
+body.dark-hero .navbar:not(.stuck) .nav-burger span{background:#fff}
+
+/* hero outline button sits on the dark video → light */
+.hero-cine .btn-outline{border-color:rgba(255,255,255,.5);color:#fff}
+.hero-cine .btn-outline:hover{border-color:#fff;background:rgba(255,255,255,.12);color:#fff}
+
 /* mobile sheet */
 .sheet{position:fixed;inset:0;z-index:1100;background:var(--bg);padding:calc(var(--nav-h) + 1rem) var(--gutter) 2rem;overflow-y:auto;opacity:0;visibility:hidden;transform:translateY(-1.5rem);transition:opacity var(--t),transform var(--t),visibility var(--t)}
 .sheet.open{opacity:1;visibility:visible;transform:translateY(0)}
