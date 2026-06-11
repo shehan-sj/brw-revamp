@@ -79,6 +79,7 @@ export function renderHeader(active = '') {
 </header>
 
 <div class="sheet" id="sheet" aria-hidden="true">
+  <button class="sheet-close" id="sheet-close" aria-label="Close menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
   ${sheetGroup('Services', SERVICES)}
   ${sheetGroup('Company', COMPANY)}
   ${sheetGroup('Our Work', WORK)}
@@ -150,6 +151,8 @@ export const CHROME_SCRIPT = `<script>
   function toggleSheet(){ setSheet(!sheet.classList.contains('open')); }
   if(burger) burger.addEventListener('click',toggleSheet);
   if(bbMenu) bbMenu.addEventListener('click',toggleSheet);
+  var sheetClose=document.getElementById('sheet-close');
+  if(sheetClose) sheetClose.addEventListener('click',function(){ setSheet(false); });
   document.querySelectorAll('#sheet a').forEach(function(a){ a.addEventListener('click',function(){ setSheet(false); }); });
   document.addEventListener('keydown',function(e){ if(e.key==='Escape') setSheet(false); });
 
