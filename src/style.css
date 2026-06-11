@@ -202,7 +202,9 @@ html[data-theme="dark"] .theme-toggle .ic-sun{display:block}
 .sheet .colophon-social a:hover{border-color:var(--accent);color:var(--accent)}
 
 /* bottom action bar (mobile) */
-.bottombar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:1050;height:calc(60px + env(safe-area-inset-bottom));background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:0 .6rem env(safe-area-inset-bottom);grid-template-columns:1fr 1fr 1fr;gap:.4rem;align-items:center}
+.bottombar{display:none;position:fixed;left:0;right:0;bottom:0;z-index:1050;height:60px;background:var(--raised);border-top:1px solid var(--line);box-shadow:0 -8px 24px -16px rgba(0,0,0,.3);padding:0 .6rem;grid-template-columns:1fr 1fr 1fr;gap:.4rem;align-items:center}
+/* safe-area extension lives below the bar as background only — never changes the bar's height */
+.bottombar::after{content:'';position:absolute;top:100%;left:0;right:0;height:env(safe-area-inset-bottom);background:var(--raised)}
 .bottombar-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;height:52px;border-radius:var(--r);font-size:.7rem;font-weight:700;color:var(--ink-2)}
 .bottombar-btn svg{width:20px;height:20px}
 .bottombar-btn.cta{background:var(--accent);color:#fff}
@@ -220,7 +222,7 @@ html[data-theme="dark"] .theme-toggle .ic-sun{display:block}
   .nav-burger{display:flex}
   .bottombar{display:grid}
   .floating-quote{display:none}
-  body{padding-bottom:calc(64px + env(safe-area-inset-bottom))}
+  body{padding-bottom:calc(60px + env(safe-area-inset-bottom))}
 }
 
 /* ============================================================
