@@ -156,8 +156,10 @@ export const CHROME_SCRIPT = `<script>
   // Hero video — autoplay once on desktop (motion-OK), then glide to next section
   var hv=document.getElementById('hero-video');
   if(hv){ var s=hv.querySelector('source[data-src]');
-    var allow=window.matchMedia('(min-width:821px)').matches && !window.matchMedia('(prefers-reduced-motion:reduce)').matches;
-    if(allow && s){ s.src=s.getAttribute('data-src'); hv.load(); var p=hv.play(); if(p&&p.catch)p.catch(function(){});
+    var reduced=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    var saveData=navigator.connection && navigator.connection.saveData;
+    var allow=!reduced && !saveData;
+    if(allow && s){ hv.muted=true; hv.setAttribute('autoplay',''); s.src=s.getAttribute('data-src'); hv.load(); var p=hv.play(); if(p&&p.catch)p.catch(function(){});
       var userMoved=false;
       window.addEventListener('scroll',function(){ if(window.scrollY>40) userMoved=true; },{passive:true});
       hv.addEventListener('ended',function(){
