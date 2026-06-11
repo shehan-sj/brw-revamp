@@ -24,158 +24,137 @@
 <section class="section" style="background:var(--c-bg)">
   <div class="container">
 
-    <!-- Filter buttons -->
-    <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-bottom:2.5rem" class="fade-up">
-      <button class="btn btn-primary btn-sm" data-filter="all">All Projects</button>
-      <button class="btn btn-outline btn-sm" data-filter="non-profit">Non-Profit</button>
-      <button class="btn btn-outline btn-sm" data-filter="transport">Transport</button>
-      <button class="btn btn-outline btn-sm" data-filter="retail">Retail</button>
-      <button class="btn btn-outline btn-sm" data-filter="automotive">Automotive</button>
-      <button class="btn btn-outline btn-sm" data-filter="other">Other</button>
+    <a class="gallery-featured fade-up" data-title="Know Human Trafficking" data-images="./images/gallery/kht-1.webp|./images/gallery/kht-2.webp|./images/gallery/kht-3.webp|./images/gallery/kht-4.webp|./images/gallery/kht-5.webp|./images/gallery/kht-6.webp|./images/gallery/kht-7.webp|./images/gallery/kht-8.webp|./images/gallery/kht-9.webp|./images/gallery/kht-10.webp">
+      <img src="./images/gallery/kht-3.webp" alt="Know Human Trafficking full trailer wrap" loading="lazy" />
+      <div class="gallery-featured-cap">
+        <div class="tag">Featured Project · Non-Profit</div>
+        <h3>Know Human Trafficking</h3>
+        <div class="meta">Full 53 ft trailer wrap · 10 photos — click to open the gallery</div>
+      </div>
+    </a>
+
+    <div class="filter-bar fade-up">
+      <button class="filter-chip is-active" data-filter="all">All Projects</button>
+      <button class="filter-chip" data-filter="non-profit">Non-Profit</button>
+      <button class="filter-chip" data-filter="transport">Transport</button>
+      <button class="filter-chip" data-filter="automotive">Automotive</button>
+      <button class="filter-chip" data-filter="retail">Retail</button>
+      <button class="filter-chip" data-filter="other">Other</button>
     </div>
 
     <div class="portfolio-grid">
 
-      <div class="portfolio-card fade-up" data-tag="non-profit">
-        <div class="portfolio-card-media" style="background:linear-gradient(135deg,#1e0a3c,#4a0090)">
-          <div class="media-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+      <div class="portfolio-card fade-up" data-tag="non-profit" data-title="Know Human Trafficking" data-images="./images/gallery/kht-1.webp|./images/gallery/kht-2.webp|./images/gallery/kht-3.webp|./images/gallery/kht-4.webp|./images/gallery/kht-5.webp|./images/gallery/kht-6.webp|./images/gallery/kht-7.webp|./images/gallery/kht-8.webp|./images/gallery/kht-9.webp|./images/gallery/kht-10.webp">
+        <div class="portfolio-card-media"><img src="./images/gallery/kht-1.webp" alt="Know Human Trafficking truck wrap" loading="lazy" /></div>
+        <div class="portfolio-card-body">
+          <div class="portfolio-tag">Non-Profit</div>
+          <h4>Know Human Trafficking</h4>
+          <p>Full 53 ft trailer wrap</p>
+          <span class="portfolio-view">10 photos · view gallery <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
-        <div class="portfolio-card-body"><div class="portfolio-tag">Non-Profit</div><h4>Know Human Trafficking</h4><p>10+ wrap images — awareness campaign across Canadian highways</p></div>
       </div>
 
-      <div class="portfolio-card fade-up" data-tag="non-profit" style="transition-delay:0.05s">
-        <div class="portfolio-card-media" style="background:linear-gradient(135deg,#0a2440,#0060b0)">
-          <div class="media-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+      <div class="portfolio-card fade-up" data-tag="retail" data-title="Kelsey's" data-images="./images/gallery/kelseys-1.webp|./images/gallery/kelseys-2.webp|./images/gallery/kelseys-3.webp|./images/gallery/kelseys-4.webp|./images/gallery/kelseys-5.webp" style="transition-delay:0.05s">
+        <div class="portfolio-card-media"><img src="./images/gallery/kelseys-1.webp" alt="Kelsey's truck wrap" loading="lazy" /></div>
+        <div class="portfolio-card-body">
+          <div class="portfolio-tag">Restaurant</div>
+          <h4>Kelsey's</h4>
+          <p>Box-truck brand campaign</p>
+          <span class="portfolio-view">5 photos · view gallery <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
-        <div class="portfolio-card-body"><div class="portfolio-tag">Non-Profit</div><h4>ALS Society of Canada</h4><p>4 wrap images — national awareness campaign</p></div>
       </div>
 
-      <div class="portfolio-card fade-up" data-tag="automotive" style="transition-delay:0.1s">
-        <div class="portfolio-card-media" style="background:linear-gradient(135deg,#1a1a1a,#d00000)">
-          <div class="media-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+      <div class="portfolio-card fade-up" data-tag="automotive" data-title="Yokohama Tire" data-images="./images/gallery/yokohama-1.webp" style="transition-delay:0.1s">
+        <div class="portfolio-card-media"><img src="./images/gallery/yokohama-1.webp" alt="Yokohama Tire truck wrap" loading="lazy" /></div>
+        <div class="portfolio-card-body">
+          <div class="portfolio-tag">Automotive</div>
+          <h4>Yokohama Tire</h4>
+          <p>53 ft trailer wrap</p>
+          <span class="portfolio-view">View photo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
-        <div class="portfolio-card-body"><div class="portfolio-tag">Automotive</div><h4>Yokohama Tire</h4><p>5 wrap images — brand campaign on major Ontario routes</p></div>
       </div>
 
-      <div class="portfolio-card fade-up" data-tag="retail" style="transition-delay:0.15s">
-        <div class="portfolio-card-media" style="background:linear-gradient(135deg,#1e0a0a,#8b0000)">
-          <div class="media-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+      <div class="portfolio-card fade-up" data-tag="non-profit" data-title="The Kidney Foundation" data-images="./images/gallery/kidney-1.webp" style="transition-delay:0.15000000000000002s">
+        <div class="portfolio-card-media"><img src="./images/gallery/kidney-1.webp" alt="The Kidney Foundation truck wrap" loading="lazy" /></div>
+        <div class="portfolio-card-body">
+          <div class="portfolio-tag">Non-Profit</div>
+          <h4>The Kidney Foundation</h4>
+          <p>Awareness campaign</p>
+          <span class="portfolio-view">View photo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
-        <div class="portfolio-card-body"><div class="portfolio-tag">Restaurant</div><h4>Kelsey's</h4><p>4 wrap images — restaurant chain brand awareness</p></div>
       </div>
 
-      <div class="portfolio-card fade-up" data-tag="non-profit">
-        <div class="portfolio-card-media" style="background:linear-gradient(135deg,#0a0a1e,#cc0000)">
-          <div class="media-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+      <div class="portfolio-card fade-up" data-tag="other" data-title="TELUS" data-images="./images/gallery/telus-1.webp">
+        <div class="portfolio-card-media"><img src="./images/gallery/telus-1.webp" alt="TELUS truck wrap" loading="lazy" /></div>
+        <div class="portfolio-card-body">
+          <div class="portfolio-tag">Telecom</div>
+          <h4>TELUS</h4>
+          <p>National brand wrap</p>
+          <span class="portfolio-view">View photo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
-        <div class="portfolio-card-body"><div class="portfolio-tag">Non-Profit</div><h4>The Salvation Army</h4><p>3 wrap images — holiday campaign fundraising drive</p></div>
       </div>
 
-      <div class="portfolio-card fade-up" data-tag="non-profit" style="transition-delay:0.05s">
-        <div class="portfolio-card-media" style="background:linear-gradient(135deg,#0a1e3c,#0050a0)">
-          <div class="media-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+      <div class="portfolio-card fade-up" data-tag="other" data-title="Old Flame Brewing" data-images="./images/gallery/oldflame-1.webp" style="transition-delay:0.05s">
+        <div class="portfolio-card-media"><img src="./images/gallery/oldflame-1.webp" alt="Old Flame Brewing truck wrap" loading="lazy" /></div>
+        <div class="portfolio-card-body">
+          <div class="portfolio-tag">Beverage</div>
+          <h4>Old Flame Brewing</h4>
+          <p>Craft brewery box-truck wrap</p>
+          <span class="portfolio-view">View photo <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
-        <div class="portfolio-card-body"><div class="portfolio-tag">Non-Profit</div><h4>The Kidney Foundation</h4><p>4 wrap images — awareness and donor campaign</p></div>
       </div>
 
-      <div class="portfolio-card fade-up" data-tag="other" style="transition-delay:0.1s">
-        <div class="portfolio-card-media" style="background:linear-gradient(135deg,#0a2010,#006030)">
-          <div class="media-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+      <div class="portfolio-card fade-up" data-tag="transport" data-title="Fleet Installations" data-images="./images/gallery/fleet-1.webp|./images/gallery/fleet-2.webp|./images/gallery/fleet-3.webp|./images/gallery/fleet-4.webp" style="transition-delay:0.1s">
+        <div class="portfolio-card-media"><img src="./images/gallery/fleet-1.webp" alt="Fleet Installations truck wrap" loading="lazy" /></div>
+        <div class="portfolio-card-body">
+          <div class="portfolio-tag">Transport</div>
+          <h4>Fleet Installations</h4>
+          <p>Trailer graphics in the bay</p>
+          <span class="portfolio-view">4 photos · view gallery <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
-        <div class="portfolio-card-body"><div class="portfolio-tag">Finance</div><h4>Pathwise Credit Union</h4><p>3 wrap images — regional financial services campaign</p></div>
       </div>
 
-      <div class="portfolio-card fade-up" data-tag="non-profit" style="transition-delay:0.15s">
-        <div class="portfolio-card-media" style="background:linear-gradient(135deg,#1a0a1e,#7b00d4)">
-          <div class="media-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+      <div class="portfolio-card fade-up" data-tag="other" data-title="Guelph & Granite Homes" data-images="./images/gallery/guelph-1.webp|./images/gallery/guelph-2.webp|./images/gallery/guelph-3.webp|./images/gallery/guelph-4.webp" style="transition-delay:0.15000000000000002s">
+        <div class="portfolio-card-media"><img src="./images/gallery/guelph-1.webp" alt="Guelph & Granite Homes truck wrap" loading="lazy" /></div>
+        <div class="portfolio-card-body">
+          <div class="portfolio-tag">Real Estate</div>
+          <h4>Guelph & Granite Homes</h4>
+          <p>Site & builder signage</p>
+          <span class="portfolio-view">4 photos · view gallery <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
-        <div class="portfolio-card-body"><div class="portfolio-tag">Industry</div><h4>Women's Trucking Federation of Canada</h4><p>3 wrap images — industry advocacy campaign</p></div>
       </div>
 
-      <div class="portfolio-card fade-up" data-tag="other">
-        <div class="portfolio-card-media" style="background:linear-gradient(135deg,#001428,#007cc2)">
-          <div class="media-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+      <div class="portfolio-card fade-up" data-tag="other" data-title="Brampton Projects" data-images="./images/gallery/brampton-1.webp|./images/gallery/brampton-2.webp">
+        <div class="portfolio-card-media"><img src="./images/gallery/brampton-1.webp" alt="Brampton Projects truck wrap" loading="lazy" /></div>
+        <div class="portfolio-card-body">
+          <div class="portfolio-tag">Signage</div>
+          <h4>Brampton Projects</h4>
+          <p>Facility & fleet graphics</p>
+          <span class="portfolio-view">2 photos · view gallery <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
         </div>
-        <div class="portfolio-card-body"><div class="portfolio-tag">Telecom</div><h4>Xplornet</h4><p>2 wrap images — rural broadband awareness</p></div>
       </div>
+    </div>
 
-      <div class="portfolio-card fade-up" data-tag="non-profit" style="transition-delay:0.05s">
-        <div class="portfolio-card-media" style="background:linear-gradient(135deg,#1e1200,#c07000)">
-          <div class="media-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
-        </div>
-        <div class="portfolio-card-body"><div class="portfolio-tag">Non-Profit</div><h4>Feed The Need</h4><p>4 wrap images — food security awareness campaign</p></div>
-      </div>
-
-      <div class="portfolio-card fade-up" data-tag="other" style="transition-delay:0.1s">
-        <div class="portfolio-card-media" style="background:linear-gradient(135deg,#0e1e00,#4a7800)">
-          <div class="media-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
-        </div>
-        <div class="portfolio-card-body"><div class="portfolio-tag">Agriculture</div><h4>Algoma Orchards</h4><p>4 wrap images — regional produce brand</p></div>
-      </div>
-
-      <div class="portfolio-card fade-up" data-tag="retail" style="transition-delay:0.15s">
-        <div class="portfolio-card-media" style="background:linear-gradient(135deg,#1e1000,#c04a00)">
-          <div class="media-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
-        </div>
-        <div class="portfolio-card-body"><div class="portfolio-tag">Retail</div><h4>Ren's Pet Depot</h4><p>3 wrap images — pet supply retail campaign</p></div>
-      </div>
-
-      <div class="portfolio-card fade-up" data-tag="transport">
-        <div class="portfolio-card-media" style="background:linear-gradient(135deg,#0a0a0a,#3a3a3a)">
-          <div class="media-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
-        </div>
-        <div class="portfolio-card-body"><div class="portfolio-tag">Transport</div><h4>Jensen Trailers</h4><p>2 wrap images — equipment manufacturer branding</p></div>
-      </div>
-
-      <div class="portfolio-card fade-up" data-tag="automotive" style="transition-delay:0.05s">
-        <div class="portfolio-card-media" style="background:linear-gradient(135deg,#0a1428,#003c8c)">
-          <div class="media-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
-        </div>
-        <div class="portfolio-card-body"><div class="portfolio-tag">Automotive</div><h4>Bessada Kia</h4><p>3 wrap images — automotive dealership brand campaign</p></div>
-      </div>
-
-      <div class="portfolio-card fade-up" data-tag="other" style="transition-delay:0.1s">
-        <div class="portfolio-card-media" style="background:linear-gradient(135deg,#0a1e0a,#004c14)">
-          <div class="media-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
-        </div>
-        <div class="portfolio-card-body"><div class="portfolio-tag">Municipal</div><h4>City of Woodstock</h4><p>3 wrap images — municipal awareness campaign</p></div>
-      </div>
-
-      <div class="portfolio-card fade-up" data-tag="retail" style="transition-delay:0.15s">
-        <div class="portfolio-card-media" style="background:linear-gradient(135deg,#1e0e00,#783000)">
-          <div class="media-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
-        </div>
-        <div class="portfolio-card-body"><div class="portfolio-tag">Pet Food</div><h4>Big Country Raw</h4><p>4 wrap images — premium pet food brand</p></div>
-      </div>
-
-      <div class="portfolio-card fade-up" data-tag="other">
-        <div class="portfolio-card-media" style="background:linear-gradient(135deg,#1a0a00,#a04000)">
-          <div class="media-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
-        </div>
-        <div class="portfolio-card-body"><div class="portfolio-tag">Beverage</div><h4>Old Flame Brewing</h4><p>2 wrap images — craft brewery brand campaign</p></div>
-      </div>
-
-      <div class="portfolio-card fade-up" data-tag="non-profit" style="transition-delay:0.05s">
-        <div class="portfolio-card-media" style="background:linear-gradient(135deg,#001428,#005080)">
-          <div class="media-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
-        </div>
-        <div class="portfolio-card-body"><div class="portfolio-tag">Healthcare</div><h4>Bowmanville Hospital Foundation</h4><p>3 wrap images — hospital fundraising campaign</p></div>
-      </div>
-
-      <div class="portfolio-card fade-up" data-tag="transport" style="transition-delay:0.1s">
-        <div class="portfolio-card-media" style="background:linear-gradient(135deg,#001800,#003c00)">
-          <div class="media-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
-        </div>
-        <div class="portfolio-card-body"><div class="portfolio-tag">Transport</div><h4>L.M.B Transport Inc.</h4><p>3 wrap images — fleet branding for transport company</p></div>
-      </div>
-
-      <div class="portfolio-card fade-up" data-tag="transport" style="transition-delay:0.15s">
-        <div class="portfolio-card-media" style="background:linear-gradient(135deg,#141400,#504400)">
-          <div class="media-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="1"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
-        </div>
-        <div class="portfolio-card-body"><div class="portfolio-tag">Moving</div><h4>Rockbrune Bros Moving</h4><p>3 wrap images — moving company fleet branding</p></div>
-      </div>
-
+    <div class="section-header centered fade-up mt-lg">
+      <span class="label">And Many More</span>
+      <h2>Trusted by Brands Across Canada</h2>
+    </div>
+    <div class="filter-bar" style="justify-content:center">
+      <span class="filter-chip" style="cursor:default">ALS Society of Canada</span>
+      <span class="filter-chip" style="cursor:default">The Salvation Army</span>
+      <span class="filter-chip" style="cursor:default">Pathwise Credit Union</span>
+      <span class="filter-chip" style="cursor:default">Women's Trucking Federation</span>
+      <span class="filter-chip" style="cursor:default">Xplornet</span>
+      <span class="filter-chip" style="cursor:default">Feed The Need</span>
+      <span class="filter-chip" style="cursor:default">Algoma Orchards</span>
+      <span class="filter-chip" style="cursor:default">Ren's Pet Depot</span>
+      <span class="filter-chip" style="cursor:default">Bessada Kia</span>
+      <span class="filter-chip" style="cursor:default">City of Woodstock</span>
+      <span class="filter-chip" style="cursor:default">Big Country Raw</span>
+      <span class="filter-chip" style="cursor:default">Bowmanville Hospital</span>
+      <span class="filter-chip" style="cursor:default">Jensen Trailers</span>
+      <span class="filter-chip" style="cursor:default">Beyond Meat</span>
+      <span class="filter-chip" style="cursor:default">Recipe Unlimited</span>
     </div>
   </div>
 </section>
