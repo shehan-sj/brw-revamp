@@ -55,8 +55,15 @@
 .stat-number{font-family:var(--display);font-size:clamp(2.2rem,5vw,3.4rem);color:var(--accent);line-height:1}
 .stat-label{font-family:var(--mono);font-size:.72rem;color:var(--ink-2);margin-top:.4rem;text-transform:uppercase}
 @media (max-width:640px){.stats-grid{grid-template-columns:1fr 1fr}}
-.quote-form-wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(2rem,4.5vw,3.6rem);align-items:center}
-@media (max-width:800px){.quote-form-wrap{grid-template-columns:1fr;align-items:start}}
+.quote-form-wrap{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(2rem,4.5vw,3.6rem);align-items:start}
+@media (max-width:800px){.quote-form-wrap{grid-template-columns:1fr}}
+/* compact trust rows so the info column matches the form height (no lopsided gap) */
+.quote-perks{display:flex;flex-direction:column;gap:.8rem;margin-bottom:1.5rem}
+.quote-perk{display:flex;gap:1rem;align-items:flex-start;padding:.95rem 1.1rem;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--raised)}
+.quote-perk-ic{width:42px;height:42px;flex-shrink:0;border-radius:11px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center}
+.quote-perk-ic svg{width:22px;height:22px}
+.quote-perk h4{font-size:1rem;margin-bottom:.15rem}
+.quote-perk p{font-size:.86rem;color:var(--ink-2);line-height:1.5}
 .quote-form{padding:clamp(1.8rem,3vw,2.6rem);border:1px solid var(--line);border-radius:var(--r-xl);background:var(--raised)}
 .form-group{margin-bottom:1.2rem}
 .form-group label{display:block;font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2);margin-bottom:.5rem}
