@@ -60,4 +60,17 @@ import Lenis from 'lenis'
     var parts = h.innerHTML.split(/<br\s*\/?>/i)
     h.innerHTML = parts.map(function (p) { return '<span class="line"><span>' + p + '</span></span>' }).join('')
   })
+
+  // ---- Staggered grid reveals: cards cascade in as each grid enters view ----
+  if (!reduced) {
+    var grids = '.metrics-grid,.why-grid,.industries-grid,.price-grid,.cost-factors,.feature-list,' +
+      '.charity-grid,.signs-grid,.process-grid,.steps-list,.truck-options,.partner-benefits,.video-grid,.svc-stack'
+    document.querySelectorAll(grids).forEach(function (grid) {
+      var kids = grid.children
+      for (var i = 0; i < kids.length; i++) {
+        var k = kids[i]
+        if (k.classList.contains('reveal') || k.classList.contains('fade-up')) k.style.transitionDelay = ((i % 6) * 0.07).toFixed(2) + 's'
+      }
+    })
+  }
 })()
