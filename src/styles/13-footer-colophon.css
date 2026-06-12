@@ -14,6 +14,9 @@
 .colophon-col h5{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,239,230,.45);margin-bottom:1rem}
 .colophon-col a{display:block;padding:.32rem 0;font-size:.9rem;transition:color var(--t)}
 .colophon-col a:hover{color:var(--accent-2)}
+/* keep the quote button a proper centered pill, not a footer text link */
+.colophon-col a.btn{display:inline-flex;padding:.6rem 1.2rem;color:#fff;border-color:rgba(244,239,230,.5)}
+.colophon-col a.btn:hover{color:var(--accent-2);border-color:var(--accent)}
 .colophon-contact .colophon-phone{font-family:var(--display);font-size:1.4rem;color:var(--accent-2);margin-bottom:.9rem}
 .colophon-base{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-block:1.4rem;border-top:1px solid rgba(244,239,230,.12)}
 .colophon-base p{font-family:var(--mono);font-size:.74rem;color:rgba(244,239,230,.45)}

@@ -43,3 +43,6 @@ html[data-theme="dark"] .eco-stat-num{color:#6ee79a}
 .cta-section h2,.summon h2{color:#fff;margin-bottom:1rem}
 .cta-section p,.summon p{color:rgba(244,239,230,.72);margin:0 auto 2.4rem;font-size:1.1rem}
 .cta-actions{display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center}
+/* CTA bands are dark steel in both themes — keep outline buttons light */
+.cta-section .btn-outline,.summon .btn-outline{border-color:rgba(244,239,230,.5);color:#fff}
+.cta-section .btn-outline:hover,.summon .btn-outline:hover{border-color:var(--accent);color:var(--accent-2)}
