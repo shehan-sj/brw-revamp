@@ -13,34 +13,35 @@
 <!--#HEADER-->
 
 <!-- ===================== CINEMATIC HERO ===================== -->
-<section class="hero-cine">
-  <div class="hero-cine__media">
+<section class="cine-hero" data-cine-hero>
+  <div class="cine-hero__bg" data-parallax="0.12">
+    <img src="./images/hero-poster.webp" alt="" aria-hidden="true" />
     <video id="hero-video" poster="./images/hero-poster.webp" muted playsinline preload="none" aria-hidden="true">
       <source data-src="./video/hero.mp4" type="video/mp4" />
     </video>
   </div>
-  <div class="hero-cine__scrim"></div>
-  <div class="hero-cine__grid"></div>
-  <div class="container hero-cine__inner">
-    <div class="hero-cine__copy">
-      <span class="eyebrow">Canada's Mobile Billboard Leader · Est. 2013</span>
-      <h1>Your Brand,<br><span class="hl">Everywhere</span><br>the Road Goes</h1>
-      <p class="hero-cine__sub">We wrap transport trucks into high-impact moving billboards — putting your message in front of millions of Canadians on highways and city streets, 24/7.</p>
-      <div class="hero-cine__actions">
-        <a href="./quote.html" class="btn btn-accent btn-lg magnetic">Get a Free Quote
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-        <a href="./projects.html" class="btn btn-outline btn-lg magnetic">See Our Work</a>
-      </div>
+  <div class="cine-hero__veil"></div>
+  <div class="cine-hero__grain"></div>
+  <div class="container cine-hero__content">
+    <span class="cine-eyebrow cine-up">Canada's Mobile Billboard Leader · Est. 2013</span>
+    <h1 class="cine-title">
+      <span class="line"><span>Your Brand,</span></span>
+      <span class="line"><span>Everywhere</span></span>
+      <span class="line accent"><span>the Road Goes</span></span>
+    </h1>
+    <p class="cine-sub cine-up cd1">We turn transport trucks into high-impact moving billboards — putting your message in front of millions of Canadians, 24/7.</p>
+    <div class="cine-cta cine-up cd2">
+      <a href="./quote.html" class="btn btn-accent btn-lg glow magnetic">Get a Free Quote
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a href="./projects.html" class="btn btn-glass btn-lg magnetic">See Our Work</a>
     </div>
-    <div class="hero-cine__aside">
-      <img class="hero-award" src="./images/brand/award.webp" alt="Award-winning fleet graphics — Big Rig Wraps" width="104" height="104" loading="eager" />
-      <div class="hero-stats">
-        <div class="hero-stat"><div class="n">82%</div><div class="t">People Reached</div></div>
-        <div class="hero-stat"><div class="n">70K+</div><div class="t">Daily Impressions</div></div>
-      </div>
+    <div class="cine-stats cine-up cd3">
+      <div class="cine-stat"><b data-count="82" data-suffix="%">82%</b><span>People reached by OOH</span></div>
+      <div class="cine-stat"><b data-count="70000" data-suffix="+">70,000+</b><span>Daily impressions / truck</span></div>
+      <div class="cine-stat"><b>50<span class="u">+</span></b><span>Truck lines in network</span></div>
     </div>
   </div>
-  <div class="hero-scroll">Scroll<span></span></div>
+  <div class="cine-scroll">Scroll</div>
 </section>
 
 <!-- ===================== TRUST STRIP ===================== -->
@@ -107,19 +108,19 @@
         <div class="svc-num">01</div>
         <div class="svc-body"><h3>Transport Truck Advertising</h3><p>Turn our 26 ft and 53 ft trucks into rolling billboards reaching up to 1.9 million people a month across Canada.</p>
           <a class="svc-link" href="./transport-truck.html">Explore options <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-        <div class="svc-media"><img src="./images/gallery/yokohama-1.webp" alt="Yokohama trailer wrap" loading="lazy" /></div>
+        <div class="svc-media" data-parallax="0.08"><img src="./images/gallery/yokohama-1.webp" alt="Yokohama trailer wrap" loading="lazy" /></div>
       </article>
       <article class="svc reveal">
         <div class="svc-num">02</div>
         <div class="svc-body"><h3>Fleet Graphics</h3><p>Transform vans, delivery trucks, food trucks and RVs into a coordinated brand army with premium, UV-protected vinyl.</p>
           <a class="svc-link" href="./fleet-graphics.html">See fleet options <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-        <div class="svc-media"><img src="./images/gallery/oldflame-1.webp" alt="Old Flame Brewing fleet wrap" loading="lazy" /></div>
+        <div class="svc-media" data-parallax="0.08"><img src="./images/gallery/oldflame-1.webp" alt="Old Flame Brewing fleet wrap" loading="lazy" /></div>
       </article>
       <article class="svc reveal">
         <div class="svc-num">03</div>
         <div class="svc-body"><h3>Custom Signs</h3><p>Banners, billboards, interior graphics, window decals and A-frames — impact wherever your customers are.</p>
           <a class="svc-link" href="./custom-signs.html">Browse signage <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-        <div class="svc-media"><img src="./images/gallery/kelseys-1.webp" alt="Kelsey's signage wrap" loading="lazy" /></div>
+        <div class="svc-media" data-parallax="0.08"><img src="./images/gallery/kelseys-1.webp" alt="Kelsey's signage wrap" loading="lazy" /></div>
       </article>
     </div>
   </div>

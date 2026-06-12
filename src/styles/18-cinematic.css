@@ -1,0 +1,75 @@
+/* ============================================================
+   CINEMATIC LAYER — immersive hero, motion, parallax, glow
+   Loaded last so it elevates the base design system site-wide.
+   ============================================================ */
+
+/* Lenis smooth-scroll: hand scroll to JS, drop native smoothing */
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto !important}
+.lenis.lenis-stopped{overflow:hidden}
+
+/* Top scroll-progress bar */
+.scroll-progress{position:fixed;top:0;left:0;z-index:1200;height:3px;width:100%;transform:scaleX(0);transform-origin:0 50%;background:linear-gradient(90deg,var(--accent),var(--accent-2));pointer-events:none;will-change:transform}
+
+/* Richer, longer scroll reveals applied to the whole site */
+.reveal,.fade-up{opacity:0;transform:translateY(30px);transition:opacity .9s var(--ease),transform .9s var(--ease);will-change:opacity,transform}
+.reveal.in,.fade-up.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.reveal,.fade-up{opacity:1 !important;transform:none !important;transition:none}}
+
+/* Parallax: inner media drifts as the block crosses the viewport */
+[data-parallax]{overflow:hidden}
+[data-parallax]>img,[data-parallax]>video{transform:translate3d(0,var(--py,0),0) scale(1.14);will-change:transform}
+
+/* ---------- CINEMATIC HERO ---------- */
+.cine-hero{position:relative;min-height:100svh;display:flex;align-items:center;overflow:hidden;background:#0a0807;color:#fff}
+.cine-hero__bg{position:absolute;inset:0;z-index:0}
+.cine-hero__bg video,.cine-hero__bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cine-hero__bg img{z-index:0}
+.cine-hero__bg video{z-index:1}
+.cine-hero__veil{position:absolute;inset:0;z-index:2;background:
+  linear-gradient(180deg,rgba(10,8,7,.45) 0%,rgba(10,8,7,.15) 30%,rgba(10,8,7,.55) 70%,rgba(10,8,7,.92) 100%),
+  radial-gradient(130% 90% at 72% 18%,transparent 38%,rgba(10,8,7,.72) 100%)}
+.cine-hero__grain{position:absolute;inset:0;z-index:3;opacity:.05;mix-blend-mode:overlay;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.cine-hero__content{position:relative;z-index:4;padding-block:calc(var(--nav-h) + 2.4rem) 5rem;max-width:980px}
+
+.cine-eyebrow{display:inline-flex;align-items:center;gap:.7rem;font-family:var(--mono);font-size:.74rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-2)}
+.cine-eyebrow::before{content:'';width:2rem;height:1px;background:var(--accent-2)}
+
+.cine-title{font-family:var(--display);text-transform:uppercase;line-height:.9;letter-spacing:.01em;font-size:clamp(2.9rem,8.5vw,7.4rem);margin:.7rem 0 1.3rem;text-shadow:0 4px 40px rgba(0,0,0,.4)}
+.cine-title .line{display:block;overflow:hidden;padding-bottom:.04em}
+.cine-title .line>span{display:block;animation:cineLineUp 1s var(--ease) both}
+.cine-title .line:nth-child(2)>span{animation-delay:.1s}
+.cine-title .line:nth-child(3)>span{animation-delay:.2s}
+.cine-title .accent{color:var(--accent-2)}
+@keyframes cineLineUp{from{transform:translateY(115%)}to{transform:none}}
+
+/* Pure-CSS load reveal (no JS dependency — headline can never get stuck hidden) */
+.cine-up{animation:cineUp .9s var(--ease) both}
+.cine-up.cd1{animation-delay:.34s}
+.cine-up.cd2{animation-delay:.46s}
+.cine-up.cd3{animation-delay:.58s}
+@keyframes cineUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.cine-title .line>span,.cine-up{animation:none}}
+
+.cine-sub{max-width:46ch;font-size:clamp(1.02rem,1.6vw,1.22rem);color:rgba(244,239,230,.86);line-height:1.6}
+.cine-cta{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2rem}
+.cine-stats{display:flex;flex-wrap:wrap;gap:2.6rem;margin-top:2.6rem}
+.cine-stat b{font-family:var(--display);font-size:clamp(1.8rem,3vw,2.6rem);line-height:1;display:block}
+.cine-stat b .u{color:var(--accent-2)}
+.cine-stat span{font-family:var(--mono);font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(244,239,230,.66)}
+
+.cine-scroll{position:absolute;bottom:1.6rem;left:50%;transform:translateX(-50%);z-index:4;display:flex;flex-direction:column;align-items:center;gap:.55rem;font-family:var(--mono);font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,239,230,.7)}
+.cine-scroll::after{content:'';width:1px;height:38px;background:linear-gradient(rgba(244,239,230,.8),transparent);animation:cineScroll 1.9s ease-in-out infinite}
+@keyframes cineScroll{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ---------- Glow + glass buttons (on dark/cinematic) ---------- */
+.btn-accent.glow{box-shadow:0 10px 30px -8px rgba(238,106,28,.7);animation:glowPulse 3.4s ease-in-out infinite}
+.btn-accent.glow:hover{animation:none;box-shadow:0 0 30px 2px rgba(238,106,28,.6),0 12px 34px -8px rgba(238,106,28,.85)}
+@keyframes glowPulse{0%,100%{box-shadow:0 10px 30px -8px rgba(238,106,28,.55)}50%{box-shadow:0 0 26px 1px rgba(238,106,28,.5),0 12px 34px -8px rgba(238,106,28,.8)}}
+.btn-glass{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.4);color:#fff;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.btn-glass:hover{background:rgba(255,255,255,.18);border-color:#fff;color:#fff;transform:translateY(-2px)}
+
+@media (max-width:640px){
+  .cine-stats{gap:1.6rem}
+  .cine-scroll{display:none}
+}

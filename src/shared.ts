@@ -3,3 +3,4 @@
 // render-blocking and cached across pages — no flash of unstyled content. This
 // module only pulls in shared interactivity.
 import './chrome'
+import './cinematic'

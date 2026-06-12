@@ -54,7 +54,7 @@
       window.addEventListener('scroll', function () { if (window.scrollY > 40) userMoved = true }, { passive: true })
       hv.addEventListener('ended', function () {
         if (userMoved || window.scrollY > 40) return
-        var hero = document.querySelector('.hero-cine'), next = hero && hero.nextElementSibling
+        var hero = document.querySelector('.cine-hero'), next = hero && hero.nextElementSibling
         if (next) { var navH = (nav ? nav.offsetHeight : 72); var y = next.getBoundingClientRect().top + window.scrollY - navH; window.scrollTo({ top: y, behavior: 'smooth' }) }
       })
     }
