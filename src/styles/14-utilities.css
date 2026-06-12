@@ -1,0 +1,42 @@
+/* ============================================================
+   REVEAL + UTIL
+   ============================================================ */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
+.reveal.in{opacity:1;transform:translateY(0)}
+.reveal[data-d="1"]{transition-delay:.08s}.reveal[data-d="2"]{transition-delay:.16s}.reveal[data-d="3"]{transition-delay:.24s}
+.fade-up{opacity:0;transform:translateY(20px);transition:opacity .5s var(--ease),transform .5s var(--ease)}
+.fade-up.in,.fade-up.visible{opacity:1;transform:translateY(0)}
+.magnetic{will-change:transform}
+.text-center{text-align:center}
+.mt-md{margin-top:2rem}.mt-lg{margin-top:3rem}.mb-md{margin-bottom:2rem}.mb-lg{margin-bottom:3rem}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .reveal,.fade-up{opacity:1!important;transform:none!important}
+}
+
+/* ---- utility classes (replacing former inline styles) ---- */
+.d1{transition-delay:.05s}.d2{transition-delay:.1s}.d3{transition-delay:.15s}.d4{transition-delay:.2s}
+.d5{transition-delay:.25s}.d6{transition-delay:.3s}.d7{transition-delay:.35s}.d8{transition-delay:.4s}.d9{transition-delay:.5s}
+.mt-3{margin-top:.75rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.mt-7{margin-top:1.75rem}.mt-8{margin-top:2rem}
+.mb-4{margin-bottom:1rem}.mb-5{margin-bottom:1.5rem}.mb-6{margin-bottom:2rem}.mb-8{margin-bottom:4rem}
+.muted{color:var(--ink-2)}.ink-text{color:var(--ink)}.accent-text{color:var(--accent)}.eco-green{color:var(--green)}
+.cols-1{grid-template-columns:1fr}.justify-center{justify-content:center}.mw-14{max-width:14ch}
+.btn-row{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.75rem}
+.static-chip{cursor:default}
+.emoji-lg{margin-bottom:.75rem;color:var(--accent)}
+/* Professional line-icons replace the old emoji glyphs in icon badges */
+.why-icon svg{width:26px;height:26px}
+.charity-icon{display:grid;place-items:center;width:52px;height:52px;border-radius:13px;background:var(--accent-soft);color:var(--accent);margin-bottom:.9rem}
+.charity-icon svg{width:26px;height:26px}
+.emoji-lg svg{width:34px;height:34px}
+.pt-nav{padding-top:calc(var(--nav-h) + clamp(2rem,5vw,3.5rem))}
+.framed{border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.ic-inline{width:16px;height:16px;display:inline}
+.eco-lead{color:var(--ink-2);margin:.9rem 0 1.8rem}
+.call-box{margin-top:2rem;padding:1.5rem;background:var(--raised);border:1px solid var(--line);border-radius:var(--r)}
+.call-box-label{font-size:.875rem;color:var(--ink-2);margin-bottom:.75rem}
+.call-box-phone{font-family:var(--display);font-size:1.6rem;color:var(--accent)}
+.form-h3{font-size:1.8rem;margin-bottom:.5rem}
+.form-sub{color:var(--ink-2);font-size:.9rem;margin-bottom:1.75rem}
+.side-h2{font-size:1.6rem;margin-bottom:1.5rem}

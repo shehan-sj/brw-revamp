@@ -1,0 +1,23 @@
+/* ============================================================
+   FOOTER (colophon)
+   ============================================================ */
+.colophon{background:var(--steel);color:var(--steel-ink)}
+.colophon a{color:rgba(244,239,230,.72)}
+.colophon-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr 1.1fr;gap:2.4rem;padding-block:clamp(3rem,5vw,4.5rem)}
+.colophon-brand .brand{margin-bottom:1.2rem}
+.colophon-brand .brand img{height:38px}
+.colophon-tag{font-size:.9rem;color:rgba(244,239,230,.6);max-width:32ch;margin-bottom:1.4rem}
+.colophon-social{display:flex;gap:.6rem}
+.colophon-social a{width:38px;height:38px;border-radius:11px;border:1px solid rgba(244,239,230,.18);display:grid;place-items:center;color:rgba(244,239,230,.7);transition:all var(--t)}
+.colophon-social a svg{width:16px;height:16px}
+.colophon-social a:hover{border-color:var(--accent);color:var(--accent-2)}
+.colophon-col h5{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:rgba(244,239,230,.45);margin-bottom:1rem}
+.colophon-col a{display:block;padding:.32rem 0;font-size:.9rem;transition:color var(--t)}
+.colophon-col a:hover{color:var(--accent-2)}
+.colophon-contact .colophon-phone{font-family:var(--display);font-size:1.4rem;color:var(--accent-2);margin-bottom:.9rem}
+.colophon-base{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-block:1.4rem;border-top:1px solid rgba(244,239,230,.12)}
+.colophon-base p{font-family:var(--mono);font-size:.74rem;color:rgba(244,239,230,.45)}
+.colophon-base nav{display:flex;gap:1.4rem}
+.colophon-base nav a{font-size:.8rem}
+@media (max-width:920px){.colophon-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.colophon-grid{grid-template-columns:1fr}}

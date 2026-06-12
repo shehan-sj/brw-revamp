@@ -1,0 +1,24 @@
+/* ============================================================
+   SERVICES (editorial rows) + legacy service cards
+   ============================================================ */
+.svc-stack{display:grid;gap:1.2rem}
+.svc{display:grid;grid-template-columns:84px 1fr 320px;align-items:center;gap:clamp(1.2rem,3vw,2.4rem);padding:clamp(1.4rem,2.5vw,2rem);border:1px solid var(--line);border-radius:var(--r-lg);background:var(--raised);transition:border-color var(--t),transform var(--t),box-shadow var(--t)}
+.svc:hover{border-color:var(--accent-line);transform:translateY(-3px);box-shadow:var(--shadow)}
+.svc-num{font-family:var(--mono);font-weight:700;font-size:1rem;color:var(--accent-ink)}
+.svc-body h3{margin-bottom:.5rem}
+.svc-body p{color:var(--ink-2);font-size:.98rem}
+.svc-link{display:inline-flex;align-items:center;gap:.45rem;margin-top:.9rem;font-weight:700;font-size:.92rem;color:var(--accent)}
+.svc-link svg{width:16px;height:16px;transition:transform var(--t)}
+.svc:hover .svc-link svg{transform:translateX(4px)}
+.svc-media{aspect-ratio:5/3.4;border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
+.svc-media img{width:100%;height:100%;object-fit:cover;transition:transform .5s var(--ease)}
+.svc:hover .svc-media img{transform:scale(1.05)}
+@media (max-width:880px){.svc{grid-template-columns:60px 1fr}.svc-media{display:none}}
+
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.2rem}
+.service-card{padding:2rem;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--raised);transition:border-color var(--t),transform var(--t)}
+.service-card:hover{border-color:var(--accent-line);transform:translateY(-4px)}
+.service-icon{width:54px;height:54px;border-radius:13px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;margin-bottom:1.2rem}
+.service-card h3{margin-bottom:.7rem;font-size:1.6rem}
+.service-card p{color:var(--ink-2);font-size:.95rem;margin-bottom:1.4rem}
+.service-card .btn{width:100%}

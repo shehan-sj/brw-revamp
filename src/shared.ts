@@ -1,4 +1,5 @@
-// CSS entry — importing here makes Vite emit a <link rel="stylesheet"> on every
-// page that loads a module which (transitively) imports this file.
-// All runtime interactivity lives in the injected chrome script (partials.mjs).
-import './style.css'
+// Entry loaded (transitively) by every page. The stylesheet is linked directly
+// in the document <head> (see the chrome plugin in vite.config.ts) so CSS is
+// render-blocking and cached across pages — no flash of unstyled content. This
+// module only pulls in shared interactivity.
+import './chrome'

@@ -1,0 +1,146 @@
+/* ============================================================
+   BIG RIG WRAPS — Design System v3  "The Moving Billboard"
+   Light-first, photography-forward, industrial-editorial.
+   ============================================================ */
+
+/* Fonts are loaded via <link> in the document <head> (faster than @import). */
+
+/* ---------- Tokens: light (default) ---------- */
+:root {
+  --bg:       #f7f4ee;   /* warm paper page bg */
+  --raised:   #ffffff;   /* cards */
+  --sunken:   #eee7db;   /* alt sections (sand) */
+  --steel:    #211c18;   /* dark feature sections */
+  --steel-ink:#f4efe6;
+
+  --ink:      #1a1512;   /* primary text */
+  --ink-2:    #5b534b;   /* secondary */
+  --ink-3:    #6f6760;   /* tertiary (AA for small text) */
+  --line:     #e6ddd0;
+  --line-2:   #d3c7b6;
+
+  --brand:    #d05000;
+  --accent:   #d9540a;
+  --accent-2: #ef6a1c;
+  --accent-ink:#b8480a;  /* accent that hits AA on paper (small labels/links) */
+  --accent-soft: rgba(217,84,10,0.10);
+  --accent-line: rgba(217,84,10,0.28);
+  --on-accent: #ffffff;
+  --green:    #1c8f4e;
+
+  --display: 'Anton', system-ui, sans-serif;
+  --sans: 'Inter', system-ui, sans-serif;
+  --mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  /* spacing scale */
+  --s1:.25rem; --s2:.5rem; --s3:.75rem; --s4:1rem; --s5:1.5rem;
+  --s6:2rem; --s7:3rem; --s8:4rem; --s9:6rem; --s10:8rem;
+  --section-y: clamp(3.5rem, 7vw, 7rem);
+  --gutter: clamp(1.1rem, 5vw, 2.6rem);
+  --maxw: 1280px;
+  --nav-h: 72px;
+
+  --r-sm:8px; --r:14px; --r-lg:22px; --r-xl:30px;
+  --ease: cubic-bezier(0.22,0.61,0.36,1);
+  --t: 0.28s var(--ease);
+  --shadow: 0 22px 60px -34px rgba(60,40,20,0.45);
+  --shadow-lg: 0 36px 90px -40px rgba(60,40,20,0.5);
+
+  --c-bg:var(--bg); --c-surface:var(--sunken); --c-surface-2:var(--raised); --c-surface-3:var(--sunken);
+  --c-border:var(--line); --c-border-2:var(--line-2); --c-text:var(--ink); --c-text-muted:var(--ink-2);
+  --c-text-dim:var(--ink-3); --c-accent:var(--accent); --c-accent-glow:var(--accent-soft);
+  --font-display:var(--display); --font-body:var(--sans); --radius:var(--r-sm); --radius-lg:var(--r); --radius-xl:var(--r-lg);
+  --transition:var(--t); --max-w:var(--maxw);
+}
+/* ---------- Tokens: dark ---------- */
+html[data-theme="dark"] {
+  --bg:       #0d0b0a;
+  --raised:   #18130f;
+  --sunken:   #120e0c;
+  --steel:    #060505;
+  --steel-ink:#f4efe6;
+  --ink:      #f4efe6;
+  --ink-2:    #b3aaa0;
+  --ink-3:    #837a70;
+  --line:     #2a2420;
+  --line-2:   #3d3631;
+  --brand:    #e85e14;
+  --accent:   #ee6a1c;
+  --accent-2: #ff8740;
+  --accent-soft: rgba(238,106,28,0.14);
+  --accent-line: rgba(238,106,28,0.32);
+  --accent-ink:#f0823a;
+  --green:    #5fce8a;
+  --shadow: 0 24px 70px -34px rgba(0,0,0,0.8);
+  --shadow-lg: 0 40px 90px -40px rgba(0,0,0,0.85);
+}
+
+/* ---------- Reset ---------- */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:1rem;line-height:1.65;letter-spacing:-.011em;-webkit-font-smoothing:antialiased;overflow-x:hidden;transition:background .3s var(--ease),color .3s var(--ease)}
+img,video,svg{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:none;cursor:pointer}
+ul,ol{list-style:none}
+input,textarea,select{font:inherit;color:inherit;background:none;border:none;outline:none}
+::selection{background:var(--accent);color:#fff}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+
+/* ---------- Type ---------- */
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:.94;letter-spacing:.01em;text-transform:uppercase}
+h1{font-size:clamp(2.6rem,6.2vw,5.6rem)}
+h2{font-size:clamp(2.1rem,5vw,4rem)}
+h3{font-size:clamp(1.5rem,3vw,2.3rem)}
+h4{font-family:var(--sans);font-weight:800;font-size:1.2rem;letter-spacing:-.02em;line-height:1.2}
+h5{font-family:var(--sans);font-weight:800}
+p{max-width:64ch}
+.eyebrow,.label{font-family:var(--mono);font-size:.72rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-ink)}
+.eyebrow{display:inline-flex;align-items:center;gap:.6rem}
+.eyebrow::before{content:'';width:1.6rem;height:1px;background:var(--accent)}
+.eyebrow.center{justify-content:center}
+.lede{font-size:1.15rem;color:var(--ink-2)}
+
+/* ---------- Layout ---------- */
+.container{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--gutter)}
+.section{padding-block:var(--section-y);position:relative}
+.section--tight{padding-block:clamp(2.4rem,4vw,3.6rem)}
+.section.alt{background:var(--sunken)}
+.section.steel{background:var(--steel);color:var(--steel-ink)}
+.section.steel .eyebrow{color:var(--accent-2)}
+.section.steel p{color:rgba(244,239,230,.72)}
+/* cards inside a dark section become dark translucent (not white) so text stays legible */
+.section.steel .step,.section.steel .step-item{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.13)}
+.section.steel .step h4,.section.steel .step-item h4{color:var(--steel-ink)}
+.section.steel .step p,.section.steel .step-item p{color:rgba(244,239,230,.66)}
+.section-head{max-width:760px;margin-bottom:clamp(2.2rem,4vw,3.4rem)}
+.section-head.center{margin-inline:auto;text-align:center}
+.section-head .eyebrow{margin-bottom:1rem}
+.section-head h2{margin-bottom:.9rem}
+.section-head p{color:var(--ink-2);font-size:1.06rem}
+.section-head.center p{margin-inline:auto}
+/* legacy section header */
+.section-header{max-width:760px;margin-bottom:clamp(2.2rem,4vw,3.4rem)}
+.section-header.centered{margin-inline:auto;text-align:center}
+.section-header .label{display:inline-block;margin-bottom:.9rem}
+.section-header h2{margin-bottom:.9rem}
+.section-header p{color:var(--ink-2);font-size:1.05rem}
+.section-header.centered p{margin-inline:auto}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55rem;padding:.95rem 1.7rem;border-radius:100px;font-family:var(--sans);font-weight:700;font-size:.98rem;letter-spacing:-.01em;white-space:nowrap;transition:transform var(--t),background var(--t),color var(--t),box-shadow var(--t),border-color var(--t)}
+.btn svg{width:18px;height:18px}
+.btn:hover{transform:translateY(-2px)}
+.btn-accent,.btn-primary{background:var(--accent);color:var(--on-accent);box-shadow:0 12px 30px -12px var(--accent)}
+.btn-accent:hover,.btn-primary:hover{background:var(--accent-2);box-shadow:0 18px 40px -12px var(--accent)}
+.btn-ink{background:var(--ink);color:var(--bg)}
+.btn-ink:hover{background:var(--accent);color:#fff}
+.btn-outline{border:1.5px solid var(--line-2);color:var(--ink)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+.section.steel .btn-outline{border-color:rgba(244,239,230,.5);color:#fff}
+.section.steel .btn-outline:hover{border-color:var(--accent);color:var(--accent-2)}
+.btn-ghost{color:var(--ink);padding-inline:.4rem}
+.btn-ghost:hover{color:var(--accent)}
+.btn-sm{padding:.6rem 1.2rem;font-size:.9rem}
+.btn-lg{padding:1.1rem 2.1rem;font-size:1.06rem}
+.btn.is-active{background:var(--accent);border-color:var(--accent);color:#fff}
