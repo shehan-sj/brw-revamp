@@ -1,7 +1,7 @@
 import { defineConfig, type Plugin } from 'vite'
 import { resolve } from 'path'
 import { readdirSync, readFileSync, existsSync } from 'fs'
-import { renderHeader, renderFooter, THEME_INIT, activeFromFilename } from './partials.mjs'
+import { renderHeader, renderFooter, THEME_INIT, activeFromFilename, renderTestimonialGrid, renderTestimonialSlider } from './partials.mjs'
 
 const cardsFile = resolve(__dirname, 'generated/blog-cards.html')
 
@@ -32,6 +32,8 @@ function chrome(): Plugin {
           const cards = existsSync(cardsFile) ? readFileSync(cardsFile, 'utf8') : ''
           out = out.replace('<!--BLOG_CARDS-->', cards)
         }
+        if (out.includes('<!--TESTIMONIALS_HOME-->')) out = out.replace('<!--TESTIMONIALS_HOME-->', renderTestimonialSlider())
+        if (out.includes('<!--TESTIMONIALS_GRID-->')) out = out.replace('<!--TESTIMONIALS_GRID-->', renderTestimonialGrid())
         return out
       },
     },
@@ -43,7 +45,7 @@ const pages: Record<string, string> = {
   index: 'index.html', 'ooh-advertising': 'ooh-advertising.html', 'transport-truck': 'transport-truck.html',
   'fleet-graphics': 'fleet-graphics.html', 'custom-signs': 'custom-signs.html', about: 'about.html',
   agencies: 'agencies.html', 'fleet-partner': 'fleet-partner.html', sustainability: 'sustainability.html',
-  portfolio: 'portfolio.html', testimonials: 'testimonials.html', charities: 'charities.html',
+  projects: 'projects.html', testimonials: 'testimonials.html', charities: 'charities.html',
   news: 'news.html', quote: 'quote.html',
 }
 const input: Record<string, string> = {}

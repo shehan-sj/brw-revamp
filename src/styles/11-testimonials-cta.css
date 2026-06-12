@@ -7,6 +7,17 @@
 .voice-av{width:48px;height:48px;border-radius:50%;background:var(--sunken);border:1px solid var(--line-2);display:grid;place-items:center;font-family:var(--display);color:var(--accent)}
 .voice-who b{display:block;font-weight:800}
 .voice-who span{font-size:.86rem;color:var(--ink-2)}
+/* Home auto-rotating testimonial carousel (cycled by chrome.ts) */
+.testi-carousel{max-width:60rem;margin-inline:auto;text-align:center}
+.testi-viewport{position:relative;display:grid}
+.testi-slide{grid-area:1/1;margin:0;opacity:0;visibility:hidden;transform:translateY(8px);transition:opacity .5s ease,transform .5s ease;pointer-events:none}
+.testi-slide.is-active{opacity:1;visibility:visible;transform:none;pointer-events:auto}
+.testi-slide .voice-quote{text-transform:none;font-size:clamp(1.3rem,2.6vw,2rem);line-height:1.22;max-width:34ch;margin-inline:auto}
+.testi-slide .voice-who{justify-content:center;margin-top:1.4rem}
+.testi-slide .voice-who>div{text-align:left}
+.testi-dots{display:flex;gap:.5rem;justify-content:center;margin-top:1.6rem}
+.testi-dot{width:8px;height:8px;padding:0;border-radius:50%;border:none;background:var(--line-2);cursor:pointer;transition:background var(--t),transform var(--t)}
+.testi-dot.is-active{background:var(--accent);transform:scale(1.3)}
 .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:1.2rem}
 .testimonial-card{padding:2rem;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--raised);position:relative}
 .testimonial-card::before{content:'\201C';position:absolute;top:.6rem;left:1.4rem;font-family:Georgia,serif;font-size:4.5rem;color:var(--accent);opacity:.22}

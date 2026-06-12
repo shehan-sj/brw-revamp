@@ -6,7 +6,7 @@ const CHEV = `<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentC
 const GROUP = {
   'transport-truck': 'services', 'fleet-graphics': 'services', 'custom-signs': 'services', 'ooh-advertising': 'services',
   about: 'company', agencies: 'company', 'fleet-partner': 'company', sustainability: 'company',
-  testimonials: 'work', portfolio: 'work', charities: 'work', news: 'news',
+  projects: 'work', testimonials: 'work', charities: 'work', news: 'news',
 }
 
 const SERVICES = [
@@ -22,14 +22,14 @@ const COMPANY = [
   ['./sustainability.html', 'Sustainability', 'Platinum Green Business Bureau'],
 ]
 const WORK = [
-  ['./portfolio.html', 'Photo Gallery', 'Real wraps on real roads'],
+  ['./projects.html', 'Projects', 'Real wraps on real roads'],
   ['./testimonials.html', 'Testimonials', 'What clients say'],
   ['./charities.html', 'Charities & NPOs', 'Causes we amplify'],
 ]
 
-const menu = (key, items) => `
+const menu = (key, label, items) => `
         <div class="nav-item has-menu" data-group="${key}">
-          <button class="nav-link" aria-haspopup="true">${key === 'services' ? 'Services' : 'Company'} ${CHEV}</button>
+          <button class="nav-link" aria-haspopup="true">${label} ${CHEV}</button>
           <div class="nav-menu"><div class="nav-menu-inner">
             ${items.map(([h, t, d]) => `<a href="${h}"><b>${t}</b><span>${d}</span></a>`).join('')}
           </div></div>
@@ -50,9 +50,9 @@ export function renderHeader(active = '') {
   <div class="navbar-inner">
     ${LOGO}
     <nav class="nav-links" aria-label="Primary">
-      ${menu('services', SERVICES)}
-      <a class="nav-link${cur('work')}" href="./portfolio.html">Work</a>
-      ${menu('company', COMPANY)}
+      ${menu('services', 'Services', SERVICES)}
+      ${menu('work', 'Our Work', WORK)}
+      ${menu('company', 'Company', COMPANY)}
       <a class="nav-link${cur('news')}" href="./news.html">News</a>
     </nav>
     <div class="nav-actions">

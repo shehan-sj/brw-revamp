@@ -82,6 +82,25 @@
   // Marquee clone
   document.querySelectorAll('.marquee-track').forEach(function (tr) { if (tr.dataset.cloned || tr.dataset.swing !== undefined) return; tr.dataset.cloned = '1'; tr.parentElement.appendChild(tr.cloneNode(true)) })
 
+  // Testimonial carousel (auto-rotate, dot controls, pause on hover)
+  document.querySelectorAll('[data-testi]').forEach(function (c) {
+    var slides = [].slice.call(c.querySelectorAll('.testi-slide'))
+    var dots = [].slice.call(c.querySelectorAll('.testi-dot'))
+    if (slides.length < 2) return
+    var i = 0, timer = null
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    function show(n) {
+      slides[i].classList.remove('is-active'); if (dots[i]) dots[i].classList.remove('is-active')
+      i = (n + slides.length) % slides.length
+      slides[i].classList.add('is-active'); if (dots[i]) dots[i].classList.add('is-active')
+    }
+    function start() { if (!reduce) { stop(); timer = window.setInterval(function () { show(i + 1) }, 5500) } }
+    function stop() { if (timer) { clearInterval(timer); timer = null } }
+    dots.forEach(function (d, n) { d.addEventListener('click', function () { show(n); start() }) })
+    c.addEventListener('mouseenter', stop); c.addEventListener('mouseleave', start)
+    start()
+  })
+
   // Lightbox
   ;(function () {
     var triggers = document.querySelectorAll('[data-images]'); if (!triggers.length) return
