@@ -56,7 +56,7 @@ html.lenis,html.lenis body{height:auto}
 .cine-stats{display:flex;flex-wrap:wrap;gap:2.6rem;margin-top:2.6rem}
 .cine-stat b{font-family:var(--display);font-size:clamp(1.8rem,3vw,2.6rem);line-height:1;display:block}
 .cine-stat b .u{color:var(--accent-2)}
-.cine-stat span{font-family:var(--mono);font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(244,239,230,.66)}
+.cine-stat span{font-family:var(--mono);font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(244,239,230,.78)}
 
 .cine-scroll{position:absolute;bottom:1.6rem;left:50%;transform:translateX(-50%);z-index:4;display:flex;flex-direction:column;align-items:center;gap:.55rem;font-family:var(--mono);font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,239,230,.7)}
 .cine-scroll::after{content:'';width:1px;height:38px;background:linear-gradient(rgba(244,239,230,.8),transparent);animation:cineScroll 1.9s ease-in-out infinite}
@@ -79,7 +79,8 @@ html.lenis,html.lenis body{height:auto}
 .page-hero::before{background:
   radial-gradient(75% 120% at 82% -12%,var(--accent-soft),transparent 56%),
   radial-gradient(55% 90% at 8% 120%,var(--accent-soft),transparent 62%) !important}
-.page-hero::after{content:'';position:absolute;inset:0;z-index:0;opacity:.35;mix-blend-mode:overlay;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.page-hero::after{content:'';position:absolute;inset:0;z-index:0;opacity:.16;mix-blend-mode:overlay;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+html[data-theme="dark"] .page-hero::after{opacity:.4}
 .page-hero .container{z-index:1}
 /* kinetic heading (lines wrapped by cinematic.ts) */
 .page-hero h1 .line{display:block;overflow:hidden;padding-bottom:.03em}
@@ -93,3 +94,9 @@ html.lenis,html.lenis body{height:auto}
 /* ---------- CTA bands: make the primary button glow ---------- */
 .cta-section .btn-primary,.cta-section .btn-accent,.summon .btn-primary,.summon .btn-accent{box-shadow:0 10px 30px -8px rgba(238,106,28,.6);animation:glowPulse 3.4s ease-in-out infinite}
 .cta-section .btn-primary:hover,.cta-section .btn-accent:hover,.summon .btn-primary:hover,.summon .btn-accent:hover{animation:none;box-shadow:0 0 28px 1px rgba(238,106,28,.55),0 12px 34px -8px rgba(238,106,28,.85)}
+
+/* Honour reduced-motion for the infinite glow + scroll-cue animations */
+@media (prefers-reduced-motion:reduce){
+  .btn-accent.glow,.cta-section .btn-primary,.cta-section .btn-accent,.summon .btn-primary,.summon .btn-accent{animation:none;box-shadow:0 10px 30px -8px rgba(238,106,28,.5)}
+  .cine-scroll::after{animation:none;transform:scaleY(.6);transform-origin:top}
+}
