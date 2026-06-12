@@ -5,7 +5,7 @@ export { renderFooter } from './partials/footer.mjs'
 export { renderTestimonialGrid, renderTestimonialSlider } from './partials/testimonials.mjs'
 
 // Tiny pre-paint script (must stay inline in <head> to avoid a theme flash).
-export const THEME_INIT = `<script>(function(){try{var t=localStorage.getItem('brw-theme');document.documentElement.setAttribute('data-theme',t==='dark'?'dark':'light');}catch(e){document.documentElement.setAttribute('data-theme','light');}})();</script>`
+export const THEME_INIT = `<script>(function(){try{var t=localStorage.getItem('brw-theme');document.documentElement.setAttribute('data-theme',t==='light'?'light':'dark');}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();</script>`
 
 export function activeFromFilename(filename) {
   return String(filename).replace(/\\/g, '/').split('/').pop().replace(/\.html$/, '')
