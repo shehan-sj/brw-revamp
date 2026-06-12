@@ -6,7 +6,7 @@ const CHEV = `<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentC
 const GROUP = {
   'transport-truck': 'services', 'fleet-graphics': 'services', 'custom-signs': 'services', 'ooh-advertising': 'services',
   about: 'company', agencies: 'company', 'fleet-partner': 'company', sustainability: 'company',
-  projects: 'work', testimonials: 'work', charities: 'work', news: 'news',
+  projects: 'work', testimonials: 'work', videos: 'work', charities: 'work', news: 'news',
 }
 
 const SERVICES = [
@@ -24,6 +24,7 @@ const COMPANY = [
 const WORK = [
   ['./projects.html', 'Projects', 'Real wraps on real roads'],
   ['./testimonials.html', 'Testimonials', 'What clients say'],
+  ['./videos.html', 'Videos', 'Client stories on film'],
   ['./charities.html', 'Charities & NPOs', 'Causes we amplify'],
 ]
 

@@ -141,6 +141,8 @@ p{max-width:64ch}
 .section.steel .btn-outline:hover{border-color:var(--accent);color:var(--accent-2)}
 .btn-ghost{color:var(--ink);padding-inline:.4rem}
 .btn-ghost:hover{color:var(--accent)}
+.section.steel .btn-ghost{color:#fff}
+.section.steel .btn-ghost:hover{color:var(--accent-2)}
 .btn-sm{padding:.6rem 1.2rem;font-size:.9rem}
 .btn-lg{padding:1.1rem 2.1rem;font-size:1.06rem}
 .btn.is-active{background:var(--accent);border-color:var(--accent);color:#fff}

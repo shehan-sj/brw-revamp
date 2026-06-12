@@ -101,6 +101,35 @@
     start()
   })
 
+  // YouTube video facade -> modal player (loads the iframe only on click)
+  ;(function () {
+    var cards = document.querySelectorAll('[data-yt]'); if (!cards.length) return
+    var modal: any, frame: any
+    function close() {
+      if (!modal) return
+      modal.classList.remove('open'); modal.setAttribute('aria-hidden', 'true')
+      frame.innerHTML = ''; document.body.style.overflow = ''
+    }
+    function build() {
+      modal = document.createElement('div')
+      modal.className = 'video-modal'; modal.setAttribute('aria-hidden', 'true')
+      modal.innerHTML = '<div class="video-modal-backdrop"></div><div class="video-modal-box"><button class="video-modal-close" aria-label="Close video">×</button><div class="video-modal-frame"></div></div>'
+      document.body.appendChild(modal)
+      frame = modal.querySelector('.video-modal-frame')
+      modal.querySelector('.video-modal-backdrop').addEventListener('click', close)
+      modal.querySelector('.video-modal-close').addEventListener('click', close)
+      document.addEventListener('keydown', function (e: any) { if (e.key === 'Escape') close() })
+    }
+    function open(id: string, title: string) {
+      if (!modal) build()
+      frame.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0" title="' + (title || 'Video testimonial') + '" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+      modal.classList.add('open'); modal.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'
+    }
+    cards.forEach(function (c) {
+      c.addEventListener('click', function () { open(c.getAttribute('data-yt'), c.getAttribute('data-vtitle') || '') })
+    })
+  })()
+
   // Lightbox
   ;(function () {
     var triggers = document.querySelectorAll('[data-images]'); if (!triggers.length) return

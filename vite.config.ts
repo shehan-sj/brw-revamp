@@ -45,7 +45,7 @@ const pages: Record<string, string> = {
   index: 'index.html', 'ooh-advertising': 'ooh-advertising.html', 'transport-truck': 'transport-truck.html',
   'fleet-graphics': 'fleet-graphics.html', 'custom-signs': 'custom-signs.html', about: 'about.html',
   agencies: 'agencies.html', 'fleet-partner': 'fleet-partner.html', sustainability: 'sustainability.html',
-  projects: 'projects.html', testimonials: 'testimonials.html', charities: 'charities.html',
+  projects: 'projects.html', testimonials: 'testimonials.html', videos: 'videos.html', charities: 'charities.html',
   news: 'news.html', quote: 'quote.html',
 }
 const input: Record<string, string> = {}

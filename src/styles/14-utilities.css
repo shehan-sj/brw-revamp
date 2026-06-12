@@ -27,6 +27,8 @@
 .emoji-lg{margin-bottom:.75rem;color:var(--accent)}
 /* Professional line-icons replace the old emoji glyphs in icon badges */
 .why-icon svg{width:26px;height:26px}
+.industry-ic svg,.feature-icon-wrap svg{width:24px;height:24px}
+.service-icon svg{width:27px;height:27px}
 .charity-icon{display:grid;place-items:center;width:52px;height:52px;border-radius:13px;background:var(--accent-soft);color:var(--accent);margin-bottom:.9rem}
 .charity-icon svg{width:26px;height:26px}
 .emoji-lg svg{width:34px;height:34px}
