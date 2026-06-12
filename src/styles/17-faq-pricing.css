@@ -1,0 +1,51 @@
+/* ============================================================
+   UNDER-CONSTRUCTION BANNER · PRICING · FAQ ACCORDION
+   ============================================================ */
+
+/* Under-construction notice (pages with placeholder figures) */
+.uc-banner{display:flex;align-items:center;justify-content:center;gap:.6rem;flex-wrap:wrap;text-align:center;padding:.7rem 1.2rem;background:rgba(238,106,28,.12);border-bottom:1px solid rgba(238,106,28,.3);color:var(--accent-ink);font-size:.86rem;font-family:var(--mono);letter-spacing:.02em}
+html[data-theme="dark"] .uc-banner{background:rgba(238,106,28,.16);color:var(--accent-2)}
+.uc-banner svg{width:16px;height:16px;flex-shrink:0}
+.uc-banner b{font-weight:700}
+
+/* Cost-driver explainer */
+.cost-factors{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.2rem;margin-top:2rem}
+.cost-factor{padding:1.6rem;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--raised)}
+.cost-factor .cf-ic{width:46px;height:46px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;margin-bottom:1rem}
+.cost-factor .cf-ic svg{width:24px;height:24px}
+.cost-factor h4{font-size:1.05rem;margin-bottom:.4rem}
+.cost-factor p{font-size:.9rem;color:var(--ink-2);line-height:1.6}
+
+/* Pricing tiers */
+.price-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.4rem;align-items:stretch}
+.price-card{display:flex;flex-direction:column;padding:2rem;border:1px solid var(--line);border-radius:var(--r-xl);background:var(--raised);position:relative}
+.price-card.featured{border-color:var(--accent);box-shadow:0 12px 36px rgba(238,106,28,.16)}
+.price-badge{position:absolute;top:-.8rem;left:2rem;font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;background:var(--accent);color:#fff;padding:.35rem .8rem;border-radius:100px}
+.price-name{font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-2)}
+.price-amount{font-family:var(--display);font-size:2.6rem;line-height:1;margin:.6rem 0 .2rem}
+.price-amount span{font-family:var(--sans);font-size:.9rem;font-weight:600;color:var(--ink-2)}
+.price-desc{font-size:.9rem;color:var(--ink-2);margin-bottom:1.4rem}
+.price-features{list-style:none;display:flex;flex-direction:column;gap:.7rem;margin:0 0 1.6rem;padding:0}
+.price-features li{display:flex;gap:.6rem;align-items:flex-start;font-size:.92rem;color:var(--ink)}
+.price-features li svg{width:18px;height:18px;color:var(--accent);flex-shrink:0;margin-top:.15rem}
+.price-card .btn{margin-top:auto}
+.price-included{margin-top:2.4rem;padding:1.8rem;border:1px dashed var(--line-2);border-radius:var(--r-lg);background:var(--sunken)}
+.price-included h3{font-size:1.2rem;margin-bottom:1rem}
+.price-included-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.8rem}
+.price-included-grid div{display:flex;gap:.55rem;align-items:center;font-size:.92rem}
+.price-included-grid svg{width:18px;height:18px;color:var(--accent);flex-shrink:0}
+
+/* FAQ accordion */
+.container.narrow{max-width:840px}
+.faq-group{margin-bottom:2.6rem}
+.faq-group h2{font-size:1.5rem;margin-bottom:1.2rem}
+.faq-item{border:1px solid var(--line);border-radius:var(--r-lg);background:var(--raised);margin-bottom:.8rem;overflow:hidden}
+.faq-item.open{border-color:var(--accent)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;gap:1rem;text-align:left;padding:1.15rem 1.4rem;background:none;border:none;cursor:pointer;font-family:var(--sans);font-weight:700;font-size:1.02rem;color:var(--ink)}
+.faq-q .faq-chev{width:20px;height:20px;flex-shrink:0;color:var(--accent);transition:transform var(--t)}
+.faq-item.open .faq-q .faq-chev{transform:rotate(180deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .32s ease}
+.faq-a-inner{padding:0 1.4rem 1.25rem;color:var(--ink-2);font-size:.95rem;line-height:1.7}
+.faq-a-inner p{margin-bottom:.7rem}
+.faq-a-inner p:last-child{margin-bottom:0}
+.faq-a-inner a{color:var(--accent);font-weight:600}

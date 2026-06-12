@@ -5,8 +5,8 @@ const CHEV = `<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentC
 
 const GROUP = {
   'transport-truck': 'services', 'fleet-graphics': 'services', 'custom-signs': 'services', 'ooh-advertising': 'services',
-  about: 'company', agencies: 'company', 'fleet-partner': 'company', sustainability: 'company',
-  projects: 'work', testimonials: 'work', videos: 'work', charities: 'work', news: 'news',
+  about: 'company', agencies: 'company', 'fleet-partner': 'company', sustainability: 'company', faq: 'company',
+  projects: 'work', testimonials: 'work', videos: 'work', charities: 'work', news: 'news', pricing: 'pricing',
 }
 
 const SERVICES = [
@@ -20,6 +20,7 @@ const COMPANY = [
   ['./agencies.html', 'For Agencies', 'Add OOH to your media mix'],
   ['./fleet-partner.html', 'Become a Fleet Partner', 'Earn from routes you already drive'],
   ['./sustainability.html', 'Sustainability', 'Platinum Green Business Bureau'],
+  ['./faq.html', 'FAQ', 'Quick answers, straight talk'],
 ]
 const WORK = [
   ['./projects.html', 'Projects', 'Real wraps on real roads'],
@@ -53,6 +54,7 @@ export function renderHeader(active = '') {
     <nav class="nav-links" aria-label="Primary">
       ${menu('services', 'Services', SERVICES)}
       ${menu('work', 'Our Work', WORK)}
+      <a class="nav-link${cur('pricing')}" href="./pricing.html">Pricing</a>
       ${menu('company', 'Company', COMPANY)}
       <a class="nav-link${cur('news')}" href="./news.html">News</a>
     </nav>
@@ -73,7 +75,7 @@ export function renderHeader(active = '') {
   ${sheetGroup('Services', SERVICES)}
   ${sheetGroup('Company', COMPANY)}
   ${sheetGroup('Our Work', WORK)}
-  <div class="sheet-group"><a href="./news.html">News</a></div>
+  <div class="sheet-group"><a href="./pricing.html">Pricing</a><a href="./news.html">News</a></div>
   <div class="sheet-foot">
     <a class="btn btn-accent" href="./quote.html">Get a Free Quote</a>
     <a class="nav-phone sheet-phone" data-tel>${ICON.phone}<span class="tel-out"></span></a>

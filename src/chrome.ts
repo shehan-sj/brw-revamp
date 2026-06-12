@@ -130,6 +130,18 @@
     })
   })()
 
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(function (item) {
+    var q = item.querySelector('.faq-q'); var a = item.querySelector('.faq-a')
+    if (!q || !a) return
+    q.addEventListener('click', function () {
+      var isOpen = item.classList.contains('open')
+      item.classList.toggle('open')
+      q.setAttribute('aria-expanded', String(!isOpen))
+      a.style.maxHeight = isOpen ? '' : a.scrollHeight + 'px'
+    })
+  })
+
   // Lightbox
   ;(function () {
     var triggers = document.querySelectorAll('[data-images]'); if (!triggers.length) return

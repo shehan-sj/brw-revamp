@@ -14,7 +14,7 @@ export function renderFooter() {
       <div class="colophon-col"><h5>Services</h5>
         <a href="./transport-truck.html">Transport Truck Ads</a><a href="./fleet-graphics.html">Fleet Graphics</a><a href="./custom-signs.html">Custom Signs</a><a href="./ooh-advertising.html">OOH Advertising</a></div>
       <div class="colophon-col"><h5>Company</h5>
-        <a href="./about.html">About Us</a><a href="./agencies.html">For Agencies</a><a href="./fleet-partner.html">Fleet Partners</a><a href="./sustainability.html">Sustainability</a></div>
+        <a href="./about.html">About Us</a><a href="./agencies.html">For Agencies</a><a href="./fleet-partner.html">Fleet Partners</a><a href="./sustainability.html">Sustainability</a><a href="./pricing.html">Pricing</a><a href="./faq.html">FAQ</a></div>
       <div class="colophon-col"><h5>Explore</h5>
         <a href="./projects.html">Projects</a><a href="./testimonials.html">Testimonials</a><a href="./videos.html">Videos</a><a href="./charities.html">Charities &amp; NPOs</a><a href="./news.html">News</a></div>
       <div class="colophon-col colophon-contact"><h5>Get in touch</h5>
