@@ -73,3 +73,23 @@ html.lenis,html.lenis body{height:auto}
   .cine-stats{gap:1.6rem}
   .cine-scroll{display:none}
 }
+
+/* ---------- Cinematic inner-page hero (theme-aware, applied site-wide) ---------- */
+.page-hero{padding-top:calc(var(--nav-h) + clamp(3.4rem,6vw,5.6rem));padding-bottom:clamp(2.8rem,5vw,4.4rem)}
+.page-hero::before{background:
+  radial-gradient(75% 120% at 82% -12%,var(--accent-soft),transparent 56%),
+  radial-gradient(55% 90% at 8% 120%,var(--accent-soft),transparent 62%) !important}
+.page-hero::after{content:'';position:absolute;inset:0;z-index:0;opacity:.35;mix-blend-mode:overlay;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.page-hero .container{z-index:1}
+/* kinetic heading (lines wrapped by cinematic.ts) */
+.page-hero h1 .line{display:block;overflow:hidden;padding-bottom:.03em}
+.page-hero h1 .line>span{display:block;animation:cineLineUp .85s var(--ease) both}
+.page-hero h1 .line:nth-child(2)>span{animation-delay:.08s}
+.page-hero h1 .line:nth-child(3)>span{animation-delay:.16s}
+.page-hero .label{animation:cineUp .8s var(--ease) both}
+.page-hero p{animation:cineUp .8s var(--ease) both;animation-delay:.18s}
+@media (prefers-reduced-motion:reduce){.page-hero h1 .line>span,.page-hero .label,.page-hero p{animation:none}}
+
+/* ---------- CTA bands: make the primary button glow ---------- */
+.cta-section .btn-primary,.cta-section .btn-accent,.summon .btn-primary,.summon .btn-accent{box-shadow:0 10px 30px -8px rgba(238,106,28,.6);animation:glowPulse 3.4s ease-in-out infinite}
+.cta-section .btn-primary:hover,.cta-section .btn-accent:hover,.summon .btn-primary:hover,.summon .btn-accent:hover{animation:none;box-shadow:0 0 28px 1px rgba(238,106,28,.55),0 12px 34px -8px rgba(238,106,28,.85)}

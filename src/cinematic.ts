@@ -33,6 +33,10 @@ import Lenis from 'lenis'
   }
 
   // ---- Parallax (translate inner media as it crosses the viewport) ----
+  // auto-tag inner-page two-column images so every page gets subtle depth
+  document.querySelectorAll('.two-col-media').forEach(function (el) {
+    if (!el.hasAttribute('data-parallax')) el.setAttribute('data-parallax', '0.06')
+  })
   var px = [].slice.call(document.querySelectorAll('[data-parallax]'))
   function parallax() {
     if (reduced) return
@@ -49,4 +53,11 @@ import Lenis from 'lenis'
   // rAF loop keeps parallax + progress in lockstep with Lenis
   function loop() { progress(); parallax(); requestAnimationFrame(loop) }
   requestAnimationFrame(loop)
+
+  // ---- Kinetic inner-page headings: wrap each <br>-delimited line for reveal ----
+  document.querySelectorAll('.page-hero h1').forEach(function (h) {
+    if (h.querySelector('.line')) return
+    var parts = h.innerHTML.split(/<br\s*\/?>/i)
+    h.innerHTML = parts.map(function (p) { return '<span class="line"><span>' + p + '</span></span>' }).join('')
+  })
 })()
