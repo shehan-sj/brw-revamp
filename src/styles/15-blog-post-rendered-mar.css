@@ -1,0 +1,26 @@
+/* ============================================================
+   BLOG POST (rendered markdown)
+   ============================================================ */
+.post-wrap{max-width:720px;margin-inline:auto}
+.post-back{display:inline-flex;align-items:center;gap:.45rem;font-weight:700;font-size:.88rem;color:var(--accent);margin-bottom:1.6rem}
+.post-back svg{width:14px;height:14px}
+.post-head{margin-bottom:1.8rem}
+.post-head .label{display:inline-block;margin-bottom:.9rem}
+.post-head h1{font-size:clamp(2.2rem,5vw,3.4rem);margin-bottom:.8rem;text-transform:none;line-height:1.05}
+.post-meta{font-family:var(--mono);font-size:.8rem;color:var(--ink-3);text-transform:uppercase;letter-spacing:.04em}
+.post-cover{width:100%;border-radius:var(--r-lg);border:1px solid var(--line);margin-bottom:2rem;aspect-ratio:16/9;object-fit:cover}
+.prose{font-size:1.06rem;line-height:1.75;color:var(--ink-2)}
+.prose>*+*{margin-top:1.1rem}
+.prose h2{font-family:var(--display);font-size:1.7rem;color:var(--ink);text-transform:uppercase;margin-top:2.2rem;letter-spacing:.01em}
+.prose h3{font-family:var(--display);font-size:1.3rem;color:var(--ink);text-transform:uppercase;margin-top:1.8rem}
+.prose p{max-width:none}
+.prose strong{color:var(--ink);font-weight:700}
+.prose a{color:var(--accent);font-weight:600;text-decoration:underline;text-underline-offset:3px}
+.prose a:hover{color:var(--accent-2)}
+.prose ul,.prose ol{padding-left:1.3rem;display:flex;flex-direction:column;gap:.4rem}
+.prose li{list-style:disc}
+.prose ol li{list-style:decimal}
+.prose blockquote{border-left:3px solid var(--accent);padding:.4rem 0 .4rem 1.2rem;color:var(--ink);font-size:1.12rem;font-style:italic}
+.prose img{border-radius:var(--r);border:1px solid var(--line)}
+.prose code{font-family:var(--mono);font-size:.9em;background:var(--sunken);padding:.1rem .35rem;border-radius:5px}
+.prose hr{border:none;border-top:1px solid var(--line);margin-block:1.6rem}
