@@ -12,4 +12,9 @@
 .marquee-wrap:hover .marquee-track{animation-play-state:paused}
 .marquee-item{font-family:var(--display);font-size:1.25rem;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-3);white-space:nowrap;transition:color var(--t)}
 .marquee-item:hover{color:var(--ink)}
+/* Client logos rendered as adaptive monochrome so they read in both themes */
+.marquee-logo{height:30px;width:auto;max-width:140px;object-fit:contain;flex-shrink:0;filter:grayscale(1) brightness(0) opacity(.5);transition:filter var(--t),opacity var(--t)}
+.marquee-logo:hover{filter:grayscale(1) brightness(0) opacity(.95)}
+html[data-theme="dark"] .marquee-logo{filter:grayscale(1) brightness(0) invert(1) opacity(.55)}
+html[data-theme="dark"] .marquee-logo:hover{filter:grayscale(1) brightness(0) invert(1) opacity(1)}
 @keyframes marquee{to{transform:translateX(-100%)}}

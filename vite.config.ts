@@ -44,7 +44,7 @@ const pages: Record<string, string> = {
   'fleet-graphics': 'fleet-graphics.html', 'custom-signs': 'custom-signs.html', about: 'about.html',
   agencies: 'agencies.html', 'fleet-partner': 'fleet-partner.html', sustainability: 'sustainability.html',
   portfolio: 'portfolio.html', testimonials: 'testimonials.html', charities: 'charities.html',
-  blog: 'blog.html', quote: 'quote.html',
+  news: 'news.html', quote: 'quote.html',
 }
 const input: Record<string, string> = {}
 for (const [k, v] of Object.entries(pages)) input[k] = resolve(__dirname, v)

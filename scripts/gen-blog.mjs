@@ -58,7 +58,7 @@ const page = (p) => `<!DOCTYPE html>
 <article class="section pt-nav">
   <div class="container">
     <div class="post-wrap">
-      <a class="post-back" href="./blog.html">${'<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>'} All posts</a>
+      <a class="post-back" href="./news.html">${'<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>'} All posts</a>
       <div class="post-head">
         <span class="label">${esc(p.tag)}</span>
         <h1>${esc(p.title)}</h1>

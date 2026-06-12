@@ -6,7 +6,7 @@ const CHEV = `<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentC
 const GROUP = {
   'transport-truck': 'services', 'fleet-graphics': 'services', 'custom-signs': 'services', 'ooh-advertising': 'services',
   about: 'company', agencies: 'company', 'fleet-partner': 'company', sustainability: 'company',
-  testimonials: 'work', portfolio: 'work', charities: 'work', blog: 'insights',
+  testimonials: 'work', portfolio: 'work', charities: 'work', news: 'news',
 }
 
 const SERVICES = [
@@ -53,7 +53,7 @@ export function renderHeader(active = '') {
       ${menu('services', SERVICES)}
       <a class="nav-link${cur('work')}" href="./portfolio.html">Work</a>
       ${menu('company', COMPANY)}
-      <a class="nav-link${cur('insights')}" href="./blog.html">Insights</a>
+      <a class="nav-link${cur('news')}" href="./news.html">News</a>
     </nav>
     <div class="nav-actions">
       <a class="nav-phone" data-tel>${ICON.phone}<span class="tel-out"></span></a>
@@ -72,7 +72,7 @@ export function renderHeader(active = '') {
   ${sheetGroup('Services', SERVICES)}
   ${sheetGroup('Company', COMPANY)}
   ${sheetGroup('Our Work', WORK)}
-  <div class="sheet-group"><a href="./blog.html">Insights</a></div>
+  <div class="sheet-group"><a href="./news.html">News</a></div>
   <div class="sheet-foot">
     <a class="btn btn-accent" href="./quote.html">Get a Free Quote</a>
     <a class="nav-phone sheet-phone" data-tel>${ICON.phone}<span class="tel-out"></span></a>
