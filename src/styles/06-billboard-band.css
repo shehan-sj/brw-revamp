@@ -1,0 +1,6 @@
+/* ============================================================
+   BILLBOARD BAND
+   ============================================================ */
+.billboard{display:block;border-radius:var(--r-xl);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);transition:transform var(--t),box-shadow var(--t)}
+.billboard:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.billboard img{width:100%;height:auto;display:block}

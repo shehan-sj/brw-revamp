@@ -1,0 +1,22 @@
+/* ============================================================
+   AWARDS / WHY / FEATURES
+   ============================================================ */
+.awards-row{display:flex;flex-wrap:wrap;align-items:center;gap:2rem;justify-content:center}
+.awards-row img{height:96px;width:auto}
+.feature-grid,.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.2rem}
+.feature,.why-card{padding:2rem 1.8rem;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--raised);position:relative;overflow:hidden;transition:border-color var(--t)}
+.feature:hover,.why-card:hover{border-color:var(--accent-line)}
+.feature-ic,.why-icon{width:52px;height:52px;border-radius:13px;display:grid;place-items:center;background:var(--accent-soft);color:var(--accent);font-size:1.5rem;margin-bottom:1.1rem}
+.feature h4,.why-card h4{margin-bottom:.5rem}
+.feature p,.why-card p{color:var(--ink-2);font-size:.92rem}
+.why-card[data-num]::after{content:attr(data-num);position:absolute;top:1.2rem;right:1.4rem;font-family:var(--mono);font-weight:700;font-size:1rem;color:var(--accent);opacity:.4}
+.feature-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.1rem}
+.feature-item{display:flex;gap:1rem;padding:1.5rem;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--raised);transition:border-color var(--t)}
+.feature-item:hover{border-color:var(--accent-line)}
+.feature-icon-wrap{width:46px;height:46px;flex-shrink:0;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-size:1.3rem}
+.feature-item h4{font-size:1.05rem;margin-bottom:.3rem}
+.feature-item p{font-size:.88rem;color:var(--ink-2)}
+.agency-stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:1rem;margin-bottom:3rem}
+.agency-stat{padding:1.5rem;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--raised);text-align:center}
+.agency-stat-num{font-family:var(--display);font-size:2.6rem;color:var(--accent);line-height:1}
+.agency-stat-label{font-family:var(--mono);font-size:.72rem;color:var(--ink-2);margin-top:.3rem;text-transform:uppercase}

@@ -1,0 +1,35 @@
+# Decap CMS — LOCAL authoring. Run `npm run cms` (decap-server) + `npm run dev`,
+# open http://localhost:5173/admin/  → edits write straight to content/blog/*.md.
+# Then commit & push; the GitHub Action rebuilds the live blog.
+backend:
+  name: github
+  repo: shehan-sj/brw-revamp
+  branch: main
+
+# When the local proxy server is running, the CMS writes to local files
+# (no GitHub auth needed). Remove this line only if you later host the admin online.
+local_backend: true
+
+media_folder: "public/images/blog"
+public_folder: "/images/blog"
+
+collections:
+  - name: blog
+    label: Blog posts
+    label_singular: Post
+    folder: content/blog
+    create: true
+    slug: "{{slug}}"
+    summary: "{{title}}  ·  {{date}}"
+    sortable_fields: [date, title]
+    fields:
+      - { label: Title, name: title, widget: string }
+      - { label: Date, name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, picker_utc: true }
+      - label: Tag
+        name: tag
+        widget: select
+        default: News
+        options: [News, Community, Strategy, "OOH Strategy", "Fleet Graphics", Sustainability, "Non-Profits", Agencies]
+      - { label: Cover image, name: cover, widget: image, required: false, hint: "Wide image works best (16:9)." }
+      - { label: Excerpt, name: excerpt, widget: text, hint: "1–2 sentences shown on the blog list." }
+      - { label: Body, name: body, widget: markdown }

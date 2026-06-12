@@ -1,0 +1,9 @@
+/* ============================================================
+   INDUSTRIES (new)
+   ============================================================ */
+.industries-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.industry{display:flex;flex-direction:column;gap:.6rem;padding:1.6rem;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--raised);transition:border-color var(--t),transform var(--t)}
+.industry:hover{border-color:var(--accent-line);transform:translateY(-3px)}
+.industry-ic{width:48px;height:48px;border-radius:12px;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-size:1.4rem}
+.industry h4{font-size:1.05rem}
+.industry p{font-size:.85rem;color:var(--ink-2)}
