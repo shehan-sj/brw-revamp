@@ -1,0 +1,9 @@
+/* ============================================================
+   COOKIE CONSENT NOTICE (shown only when analytics is enabled)
+   ============================================================ */
+.consent{position:fixed;left:50%;bottom:1.1rem;transform:translateX(-50%);z-index:1100;width:min(640px,calc(100% - 2rem));display:flex;align-items:center;gap:1rem;flex-wrap:wrap;justify-content:space-between;padding:.9rem 1.1rem;border:1px solid var(--line);border-radius:var(--r-lg);background:var(--raised);box-shadow:var(--shadow-lg)}
+.consent[hidden]{display:none}
+.consent p{margin:0;font-size:.86rem;color:var(--ink-2);max-width:42ch}
+.consent p a{color:var(--accent);font-weight:600}
+.consent-actions{display:flex;gap:.6rem;flex-shrink:0}
+@media (max-width:520px){.consent{flex-direction:column;align-items:stretch;text-align:center}.consent-actions{justify-content:center}}

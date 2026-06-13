@@ -1,7 +1,7 @@
 import { defineConfig, type Plugin } from 'vite'
 import { resolve } from 'path'
 import { readdirSync, readFileSync, existsSync } from 'fs'
-import { renderHeader, renderFooter, THEME_INIT, activeFromFilename, renderTestimonialGrid, renderTestimonialSlider } from './partials.mjs'
+import { renderHeader, renderFooter, THEME_INIT, activeFromFilename, renderTestimonialGrid, renderTestimonialSlider, ANALYTICS_HEAD, CONSENT_BANNER } from './partials.mjs'
 
 const cardsFile = resolve(__dirname, 'generated/blog-cards.html')
 
@@ -25,9 +25,9 @@ function chrome(): Plugin {
           `  <link rel="stylesheet" href="/src/styles/main.css" />`
         let out = html
           .replace('<head>', `<head>\n  ${THEME_INIT}`)
-          .replace('</head>', `  ${HEAD_ASSETS}\n</head>`)
+          .replace('</head>', `  ${HEAD_ASSETS}${ANALYTICS_HEAD}\n</head>`)
           .replace('<!--#HEADER-->', renderHeader(active))
-          .replace('<!--#FOOTER-->', renderFooter())
+          .replace('<!--#FOOTER-->', renderFooter() + CONSENT_BANNER)
         if (out.includes('<!--BLOG_CARDS-->')) {
           const cards = existsSync(cardsFile) ? readFileSync(cardsFile, 'utf8') : ''
           out = out.replace('<!--BLOG_CARDS-->', cards)
@@ -46,7 +46,7 @@ const pages: Record<string, string> = {
   'fleet-graphics': 'fleet-graphics.html', 'custom-signs': 'custom-signs.html', about: 'about.html',
   agencies: 'agencies.html', 'fleet-partner': 'fleet-partner.html', sustainability: 'sustainability.html',
   projects: 'projects.html', testimonials: 'testimonials.html', videos: 'videos.html', charities: 'charities.html',
-  news: 'news.html', quote: 'quote.html', pricing: 'pricing.html', faq: 'faq.html',
+  news: 'news.html', quote: 'quote.html', pricing: 'pricing.html', faq: 'faq.html', privacy: 'privacy.html',
 }
 const input: Record<string, string> = {}
 for (const [k, v] of Object.entries(pages)) input[k] = resolve(__dirname, v)

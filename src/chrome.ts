@@ -16,6 +16,22 @@
   document.querySelectorAll('[data-tel]').forEach(function (a) { a.setAttribute('href', 'tel:' + d) })
   document.querySelectorAll('.tel-out').forEach(function (s) { s.textContent = disp })
 
+  // Cookie consent (only present when analytics is enabled)
+  var consent = document.getElementById('consent')
+  if (consent) {
+    var choice = null
+    try { choice = localStorage.getItem('brw-consent') } catch (e) {}
+    if (!choice) consent.hidden = false
+    function setConsent(v) {
+      try { localStorage.setItem('brw-consent', v) } catch (e) {}
+      if (v === 'granted' && typeof window.gtag === 'function') window.gtag('consent', 'update', { analytics_storage: 'granted' })
+      consent.hidden = true
+    }
+    var ac = consent.querySelector('[data-consent="accept"]'), dc = consent.querySelector('[data-consent="decline"]')
+    if (ac) ac.addEventListener('click', function () { setConsent('granted') })
+    if (dc) dc.addEventListener('click', function () { setConsent('denied') })
+  }
+
   // Theme toggle
   document.querySelectorAll('.theme-toggle').forEach(function (b) {
     b.addEventListener('click', function () {

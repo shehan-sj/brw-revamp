@@ -23,7 +23,7 @@ export function renderFooter() {
     </div>
     <div class="colophon-base">
       <p>&copy; 2026 Big Rig Wraps Transport Truck Advertising. All rights reserved.</p>
-      <nav><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></nav>
+      <nav><a href="./privacy.html">Privacy Policy</a><a href="./faq.html">FAQ</a></nav>
     </div>
   </div>
 </footer>`
