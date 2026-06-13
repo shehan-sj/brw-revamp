@@ -14,7 +14,7 @@ export function activeFromFilename(filename) {
 /* ---------- Analytics (Google Analytics 4) ----------
    Paste your GA4 Measurement ID below (looks like 'G-ABCD1234') to switch it on.
    Leave it empty and nothing is injected — the site stays analytics-free. */
-export const GA_ID = ''
+export const GA_ID = 'G-8XXJB62LKG'
 
 // GA4 with Consent Mode v2: analytics cookies stay denied until the visitor
 // accepts the cookie notice; on accept (stored choice) we grant on load.
