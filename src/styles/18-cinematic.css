@@ -21,7 +21,7 @@ html.lenis,html.lenis body{height:auto}
 [data-parallax]>img,[data-parallax]>video{transform:translate3d(0,var(--py,0),0) scale(1.14);will-change:transform}
 
 /* ---------- CINEMATIC HERO ---------- */
-.cine-hero{position:relative;min-height:90svh;display:flex;align-items:center;overflow:hidden;background:#0a0807;color:#fff}
+.cine-hero{position:relative;min-height:82svh;display:flex;align-items:center;overflow:hidden;background:#0a0807;color:#fff}
 .cine-hero__bg{position:absolute;inset:0;z-index:0}
 .cine-hero__bg video,.cine-hero__bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .cine-hero__bg img{z-index:0}
