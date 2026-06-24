@@ -58,6 +58,7 @@ html.lenis,html.lenis body{height:auto}
 .cine-stat b .u{color:var(--accent-2)}
 .cine-stat span{font-family:var(--mono);font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(244,239,230,.78)}
 
+.cine-hero__marquee{position:absolute;bottom:0;left:0;right:0;z-index:4;padding-block:clamp(.9rem,1.6vw,1.3rem);border-top:1px solid rgba(255,255,255,.1);background:rgba(10,8,7,.5);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);overflow:hidden}
 .cine-scroll{position:absolute;bottom:1.6rem;left:50%;transform:translateX(-50%);z-index:4;display:flex;flex-direction:column;align-items:center;gap:.55rem;font-family:var(--mono);font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,239,230,.7)}
 .cine-scroll::after{content:'';width:1px;height:38px;background:linear-gradient(rgba(244,239,230,.8),transparent);animation:cineScroll 1.9s ease-in-out infinite}
 @keyframes cineScroll{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
@@ -69,9 +70,9 @@ html.lenis,html.lenis body{height:auto}
 .btn-glass{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.4);color:#fff;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
 .btn-glass:hover{background:rgba(255,255,255,.18);border-color:#fff;color:#fff;transform:translateY(-2px)}
 
+.cine-scroll{display:none}
 @media (max-width:640px){
   .cine-stats{gap:1.6rem}
-  .cine-scroll{display:none}
 }
 
 /* ---------- Cinematic inner-page hero (theme-aware, applied site-wide) ---------- */
