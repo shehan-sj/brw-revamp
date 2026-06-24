@@ -40,13 +40,14 @@ html[data-theme="dark"] .theme-toggle .ic-sun{display:block}
 .nav-burger.open span:nth-child(2){opacity:0}
 .nav-burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
-/* Transparent navbar over the dark cinematic hero → light chrome until it sticks */
-body.dark-hero .navbar:not(.stuck) .nav-link{color:rgba(255,255,255,.82)}
-body.dark-hero .navbar:not(.stuck) .nav-link:hover,body.dark-hero .navbar:not(.stuck) .nav-link.current{color:#fff}
-body.dark-hero .navbar:not(.stuck) .nav-phone{color:rgba(255,255,255,.85)}
-body.dark-hero .navbar:not(.stuck) .brand img{filter:brightness(0) invert(1)}
-body.dark-hero .navbar:not(.stuck) .theme-toggle{border-color:rgba(255,255,255,.4);color:#fff}
-body.dark-hero .navbar:not(.stuck) .nav-burger span{background:#fff}
+/* Solid dark navbar over the cinematic hero */
+body.dark-hero .navbar{background:rgba(10,8,7,.92);border-bottom-color:rgba(255,255,255,.1);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+body.dark-hero .navbar .nav-link{color:rgba(255,255,255,.8)}
+body.dark-hero .navbar .nav-link:hover,body.dark-hero .navbar .nav-link.current{color:#fff}
+body.dark-hero .navbar .nav-phone{color:rgba(255,255,255,.8)}
+body.dark-hero .navbar .brand img{filter:brightness(0) invert(1)}
+body.dark-hero .navbar .theme-toggle{border-color:rgba(255,255,255,.3);color:#fff}
+body.dark-hero .navbar .nav-burger span{background:#fff}
 
 /* hero outline button sits on the dark video → light */
 .hero-cine .btn-outline{border-color:rgba(255,255,255,.5);color:#fff}

@@ -78,7 +78,7 @@
 
   // Reveal on scroll
   if ('IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target) } }) }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' })
+    var io = new IntersectionObserver(function (es) { es.forEach(function (en) { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target) } }) }, { threshold: 0, rootMargin: '0px 0px 400px 0px' })
     document.querySelectorAll('.reveal,.fade-up').forEach(function (el) { io.observe(el) })
   } else { document.querySelectorAll('.reveal,.fade-up').forEach(function (el) { el.classList.add('in') }) }
 

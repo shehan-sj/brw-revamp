@@ -35,7 +35,7 @@
   /* spacing scale */
   --s1:.25rem; --s2:.5rem; --s3:.75rem; --s4:1rem; --s5:1.5rem;
   --s6:2rem; --s7:3rem; --s8:4rem; --s9:6rem; --s10:8rem;
-  --section-y: clamp(3.5rem, 7vw, 7rem);
+  --section-y: clamp(2rem, 4vw, 3.5rem);
   --gutter: clamp(1.1rem, 5vw, 2.6rem);
   --maxw: 1280px;
   --nav-h: 72px;
