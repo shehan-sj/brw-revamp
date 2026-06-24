@@ -1,0 +1,31 @@
+/* ============================================================
+   PROOF SECTION — metrics + client logo grid (two-column)
+   ============================================================ */
+.proof-cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.clients-label{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);margin-bottom:1rem}
+.clients-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:.7rem}
+
+/* 2×2 metrics variant for the proof left column */
+.metrics-grid--2col{grid-template-columns:1fr 1fr}
+.metrics-grid--2col .metric:nth-child(odd){border-right:1px solid var(--line)}
+.metrics-grid--2col .metric:nth-child(-n+2){border-bottom:1px solid var(--line)}
+.metrics-grid--2col .metric{border-right:none}
+
+/* always white pill so logos read on any theme */
+.client-logo{display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid #e6ddd0;border-radius:var(--r);padding:.75rem 1rem;transition:border-color var(--t),transform var(--t),box-shadow var(--t)}
+.client-logo:hover{border-color:var(--accent-line);transform:translateY(-2px);box-shadow:0 8px 24px -8px rgba(0,0,0,.15)}
+.client-logo img{height:36px;width:100%;max-width:110px;object-fit:contain}
+
+/* metrics dark mode lift */
+html[data-theme="dark"] .metrics-grid{border-color:#3d3631;box-shadow:0 0 0 1px #3d3631}
+html[data-theme="dark"] .metrics-grid .metric{border-color:#3d3631}
+
+@media(max-width:768px){
+  .proof-cols{grid-template-columns:1fr}
+  .metrics-grid--2col{grid-template-columns:1fr 1fr}
+}
+@media(max-width:480px){
+  .clients-grid{grid-template-columns:repeat(3,1fr)}
+  .client-logo{padding:.6rem .7rem}
+  .client-logo img{height:28px}
+}

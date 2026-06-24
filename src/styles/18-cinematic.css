@@ -21,7 +21,7 @@ html.lenis,html.lenis body{height:auto}
 [data-parallax]>img,[data-parallax]>video{transform:translate3d(0,var(--py,0),0) scale(1.14);will-change:transform}
 
 /* ---------- CINEMATIC HERO ---------- */
-.cine-hero{position:relative;min-height:82svh;display:flex;align-items:center;overflow:hidden;background:#0a0807;color:#fff}
+.cine-hero{position:relative;min-height:clamp(500px,82svh,820px);display:flex;align-items:center;overflow:hidden;background:#0a0807;color:#fff}
 .cine-hero__bg{position:absolute;inset:0;z-index:0}
 .cine-hero__bg video,.cine-hero__bg img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .cine-hero__bg img{z-index:0}
@@ -30,7 +30,12 @@ html.lenis,html.lenis body{height:auto}
   linear-gradient(180deg,rgba(10,8,7,.45) 0%,rgba(10,8,7,.15) 30%,rgba(10,8,7,.55) 70%,rgba(10,8,7,.92) 100%),
   radial-gradient(130% 90% at 72% 18%,transparent 38%,rgba(10,8,7,.72) 100%)}
 .cine-hero__grain{position:absolute;inset:0;z-index:3;opacity:.05;mix-blend-mode:overlay;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-.cine-hero__content{position:relative;z-index:4;padding-block:calc(var(--nav-h) + 2.4rem) 5rem;max-width:980px}
+.cine-hero__content{position:relative;z-index:4;padding-block:calc(var(--nav-h) + 2.4rem) clamp(6rem,9vw,7.5rem);max-width:700px}
+
+/* ---------- Trust strip anchored inside hero ---------- */
+.cine-hero__trust{position:absolute;bottom:0;left:0;right:0;z-index:5;border-top:1px solid rgba(255,255,255,.12);background:rgba(10,8,7,.55);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.cine-hero__trust .trust-inner{padding-block:.9rem;justify-content:flex-start;gap:1.4rem}
+.cine-hero__trust .trust-note{color:rgba(244,239,230,.75)}
 
 .cine-eyebrow{display:inline-flex;align-items:center;gap:.7rem;font-family:var(--mono);font-size:.74rem;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--accent-2)}
 .cine-eyebrow::before{content:'';width:2rem;height:1px;background:var(--accent-2)}
@@ -53,15 +58,6 @@ html.lenis,html.lenis body{height:auto}
 
 .cine-sub{max-width:46ch;font-size:clamp(1.02rem,1.6vw,1.22rem);color:rgba(244,239,230,.86);line-height:1.6}
 .cine-cta{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2rem}
-.cine-stats{display:flex;flex-wrap:wrap;gap:2.6rem;margin-top:2.6rem}
-.cine-stat b{font-family:var(--display);font-size:clamp(1.8rem,3vw,2.6rem);line-height:1;display:block}
-.cine-stat b .u{color:var(--accent-2)}
-.cine-stat span{font-family:var(--mono);font-size:.68rem;letter-spacing:.13em;text-transform:uppercase;color:rgba(244,239,230,.78)}
-
-.cine-hero__marquee{position:absolute;bottom:0;left:0;right:0;z-index:4;padding-block:clamp(.9rem,1.6vw,1.3rem);border-top:1px solid rgba(255,255,255,.1);background:rgba(10,8,7,.5);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);overflow:hidden}
-.cine-scroll{position:absolute;bottom:1.6rem;left:50%;transform:translateX(-50%);z-index:4;display:flex;flex-direction:column;align-items:center;gap:.55rem;font-family:var(--mono);font-size:.64rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(244,239,230,.7)}
-.cine-scroll::after{content:'';width:1px;height:38px;background:linear-gradient(rgba(244,239,230,.8),transparent);animation:cineScroll 1.9s ease-in-out infinite}
-@keyframes cineScroll{0%{transform:scaleY(0);transform-origin:top}45%{transform:scaleY(1);transform-origin:top}55%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
 
 /* ---------- Glow + glass buttons (on dark/cinematic) ---------- */
 .btn-accent.glow{box-shadow:0 10px 30px -8px rgba(238,106,28,.7);animation:glowPulse 3.4s ease-in-out infinite}
@@ -70,10 +66,6 @@ html.lenis,html.lenis body{height:auto}
 .btn-glass{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.4);color:#fff;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
 .btn-glass:hover{background:rgba(255,255,255,.18);border-color:#fff;color:#fff;transform:translateY(-2px)}
 
-.cine-scroll{display:none}
-@media (max-width:640px){
-  .cine-stats{gap:1.6rem}
-}
 
 /* ---------- Cinematic inner-page hero (theme-aware, applied site-wide) ---------- */
 .page-hero{padding-top:calc(var(--nav-h) + clamp(3.4rem,6vw,5.6rem));padding-bottom:clamp(2.8rem,5vw,4.4rem)}
